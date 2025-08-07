@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software & Automation Consulting | NLE Business Services</title>
+    <meta name="description" content="Transform your business with expert software and automation consulting. Specialising in Xero migrations, process automation, and workflow optimisation to boost efficiency.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo-colour.png">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html">
+                    <img src="logo-colour.png" alt="NLE Tax & Accounting" class="logo">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="tax-preparation.html" class="dropdown-item">Tax Preparation & Filing</a>
+                        <a href="management-accounts.html" class="dropdown-item active">Software & Automation Consulting</a>
+                        <a href="bookkeeping-payroll.html" class="dropdown-item">Bookkeeping & Payroll</a>
+                        <a href="tax-planning.html" class="dropdown-item">Tax Planning & Strategy</a>
+                        <a href="deceased-estates.html" class="dropdown-item">Deceased Estates</a>
+                        <a href="virtual-cfo.html" class="dropdown-item">Virtual CFO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Calculators</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item coming-soon">
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                        <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                        <path d="M8 10h.01"/>
+                                        <path d="M12 10h.01"/>
+                                        <path d="M16 10h.01"/>
+                                        <path d="M8 13h.01"/>
+                                        <path d="M12 13h.01"/>
+                                        <path d="M16 13h.01"/>
+                                        <path d="M8 16h.01"/>
+                                        <path d="M12 16h.01"/>
+                                        <path d="M16 16h.01"/>
+                                        <path d="M8 19h8"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-item-text">
+                                    <span class="dropdown-item-title">Reverse Payroll Calculator</span>
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item coming-soon">
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3v18h18"/>
+                                        <path d="M7 16l3-3 3 3 5-5"/>
+                                        <path d="M14 8h5v5"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-item-text">
+                                    <span class="dropdown-item-title">Negative Gearing Calculator</span>
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#calculators" class="nav-link">Calculators</a>
+                <a href="index.html#contact" class="cta-button">Contact Us</a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <a href="#" class="mobile-nav-link services-toggle">
+                    <span class="nav-link-text">Services</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-services-submenu">
+                    <a href="tax-preparation.html" class="mobile-nav-sublink">
+                        <span>Tax Preparation & Filing</span>
+                    </a>
+                    <a href="management-accounts.html" class="mobile-nav-sublink active">
+                        <span>Software & Automation Consulting</span>
+                    </a>
+                    <a href="bookkeeping-payroll.html" class="mobile-nav-sublink">
+                        <span>Bookkeeping & Payroll</span>
+                    </a>
+                    <a href="tax-planning.html" class="mobile-nav-sublink">
+                        <span>Tax Planning & Strategy</span>
+                    </a>
+                    <a href="deceased-estates.html" class="mobile-nav-sublink">
+                        <span>Deceased Estates</span>
+                    </a>
+                    <a href="virtual-cfo.html" class="mobile-nav-sublink">
+                        <span>Virtual CFO</span>
+                    </a>
+                </div>
+                <a href="index.html#about" class="mobile-nav-link">
+                    <span class="nav-link-text">About</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#" class="mobile-nav-link calculators-toggle">
+                    <span class="nav-link-text">Calculators</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-calculators-submenu">
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                    <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                    <path d="M8 10h.01"/>
+                                    <path d="M12 10h.01"/>
+                                    <path d="M16 10h.01"/>
+                                    <path d="M8 13h.01"/>
+                                    <path d="M12 13h.01"/>
+                                    <path d="M16 13h.01"/>
+                                    <path d="M8 16h.01"/>
+                                    <path d="M12 16h.01"/>
+                                    <path d="M16 16h.01"/>
+                                    <path d="M8 19h8"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Reverse Payroll Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="M7 16l3-3 3 3 5-5"/>
+                                    <path d="M14 8h5v5"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Negative Gearing Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="index.html#contact" class="mobile-nav-link">
+                    <span class="nav-link-text">Contact</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="index.html#contact" class="mobile-cta">Get Started Today</a>
+                <div class="mobile-menu-contact">
+                    <a href="tel:61451072412" class="mobile-contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>61 451 072 412</span>
+                    </a>
+                    <a href="mailto:info@nlesa.com.au" class="mobile-contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>info@nlesa.com.au</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero-section">
+        <div class="service-hero-background">
+            <div class="geometric-patterns"></div>
+        </div>
+        <div class="service-hero-content">
+            <div class="service-hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                    <path d="M7 10h5l-2 3h4l-2 3"/>
+                </svg>
+            </div>
+            <h1 class="service-hero-title">Software & Automation Consulting</h1>
+            <p class="service-hero-subtitle">Transform your business operations with cutting-edge software solutions and intelligent automation. From seamless Xero migrations to comprehensive workflow optimisation, we'll help you harness technology to boost efficiency and drive growth.</p>
+            <div class="service-hero-cta">
+                <a href="index.html#contact" class="primary-cta">Get Started</a>
+                <a href="#service-details" class="secondary-cta">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details-section">
+        <div class="container">
+            <div class="service-content-grid">
+                <div class="service-main-content">
+                    <div class="service-overview">
+                        <h2 class="section-title">Why Choose Professional Software & Automation Consulting?</h2>
+                        <p class="service-description">
+                            In today's fast-paced business environment, the right technology stack can be the difference between struggling to keep up and leading your industry. Our software and automation consulting services help you leverage cutting-edge tools to streamline operations, reduce manual errors, and unlock new levels of productivity.
+                        </p>
+                        <p class="service-description">
+                            Whether you're looking to migrate from outdated systems, implement new automation workflows, or optimise your existing software stack, our team of technology experts will guide you through every step of the transformation process.
+                        </p>
+                    </div>
+
+                    <div class="service-features-detailed">
+                        <h3 class="feature-section-title">Comprehensive Software Solutions</h3>
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2l9 4.5-9 4.5L3 6.5 12 2z"/>
+                                        <path d="M12 11v9"/>
+                                        <path d="M21 16.5l-9 4.5-9-4.5"/>
+                                    </svg>
+                                </div>
+                                <h4>Xero Migration & Setup</h4>
+                                <p>Seamlessly transition from your current accounting software to Xero with our expert migration services. We handle data transfer, chart of accounts mapping, and comprehensive staff training to ensure zero disruption to your business operations.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="6" width="20" height="8" rx="1"/>
+                                        <path d="M6 12h12"/>
+                                        <path d="M12 12v3"/>
+                                    </svg>
+                                </div>
+                                <h4>Process Automation</h4>
+                                <p>Eliminate repetitive manual tasks with intelligent automation solutions. From invoice processing to data entry, we'll identify opportunities to automate workflows and free up your team for strategic work.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <path d="M21 12c0 4.418-4 8-9 8a9.05 9.05 0 01-2.618-.384c-.409-.113-.818-.227-1.21-.403L3 21l1.618-5.172c-.176-.392-.29-.801-.403-1.21A9.05 9.05 0 013 12C3 7.582 7 4 12 4s9 3.582 9 8z"/>
+                                    </svg>
+                                </div>
+                                <h4>Software Recommendations</h4>
+                                <p>Navigate the complex software landscape with confidence. Our technology experts assess your business needs and recommend the perfect software stack to drive efficiency and growth.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2z"/>
+                                        <line x1="8" y1="1" x2="8" y2="4"/>
+                                        <line x1="16" y1="1" x2="16" y2="4"/>
+                                    </svg>
+                                </div>
+                                <h4>Workflow Optimisation</h4>
+                                <p>Streamline your business processes with data-driven workflow analysis. We identify bottlenecks, eliminate redundancies, and design efficient workflows that boost productivity across your organisation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-process">
+                        <h3 class="feature-section-title">Our Consulting Process</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h4>Technology Assessment</h4>
+                                    <p>Comprehensive analysis of your current software systems, identifying inefficiencies and opportunities for improvement through detailed workflow mapping and performance evaluation.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h4>Solution Design</h4>
+                                    <p>Custom technology roadmap tailored to your business objectives, including software recommendations, automation opportunities, and implementation timelines.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h4>Implementation & Migration</h4>
+                                    <p>Expert execution of software migrations and automation setup with minimal business disruption, comprehensive testing, and data integrity validation.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">04</div>
+                                <div class="step-content">
+                                    <h4>Training & Support</h4>
+                                    <p>Comprehensive staff training programmes and ongoing support to ensure your team maximises the benefits of your new technology stack.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card contact-card">
+                        <h3>Need Help with Software Implementation?</h3>
+                        <p>Our technology experts are ready to transform your business operations with the right software solutions.</p>
+                        <a href="index.html#contact" class="sidebar-cta">Get Started</a>
+                    </div>
+
+                    <div class="sidebar-card quote-card">
+                        <a href="index.html#contact" class="sidebar-cta">Get Started</a>
+                    </div>
+
+                    <div class="sidebar-card info-card">
+                        <h3>Why Choose Xero?</h3>
+                        <ul class="info-list">
+                            <li>Cloud-based accessibility</li>
+                            <li>Real-time financial reporting</li>
+                            <li>Automated bank reconciliation</li>
+                            <li>Seamless third-party integrations</li>
+                            <li>Mobile app functionality</li>
+                            <li>Comprehensive reporting systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services -->
+    <section class="related-services-section">
+        <div class="container">
+            <h2 class="section-title">Related Services</h2>
+            <div class="related-services-grid">
+                <a href="bookkeeping-payroll.html" class="related-service-card">
+                    <div class="related-service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3>Bookkeeping & Payroll</h3>
+                    <p>Comprehensive bookkeeping and payroll services to complement your new software systems.</p>
+                </a>
+
+                <a href="virtual-cfo.html" class="related-service-card">
+                    <div class="related-service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 3v18h18"/>
+                            <path d="M7 17l4-4 4 4 6-6"/>
+                            <path d="M17 7l4 4-4 4"/>
+                        </svg>
+                    </div>
+                    <h3>Virtual CFO</h3>
+                    <p>Strategic financial leadership to maximise the value of your technology investments.</p>
+                </a>
+
+                <a href="tax-planning.html" class="related-service-card">
+                    <div class="related-service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <h3>Tax Planning & Strategy</h3>
+                    <p>Optimise your tax position with strategic planning and technology-enabled compliance.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-column footer-brand">
+                        <img src="logo-colour.png" alt="NLE Business Services" class="footer-logo">
+                        <p class="footer-description">Leading the future of accounting with innovative solutions, expert guidance, and unwavering commitment to your financial success.</p>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>1A Tarton Road, Holden Hill, SA</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>info@nlesa.com.au</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <a href="tel:+61451072412">61 451 072 412</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="tax-preparation.html">Tax Preparation & Filing</a></li>
+                            <li><a href="management-accounts.html">Software & Automation Consulting</a></li>
+                            <li><a href="bookkeeping-payroll.html">Bookkeeping & Payroll</a></li>
+                            <li><a href="tax-planning.html">Tax Planning & Strategy</a></li>
+                            <li><a href="tax-preparation.html">Business Activity Statements</a></li>
+                            <li><a href="tax-preparation.html">Company Tax</a></li>
+                            <li><a href="deceased-estates.html">Deceased Estates</a></li>
+                            <li><a href="virtual-cfo.html">Virtual CFO</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html#about">About NLE</a></li>
+                            <li><a href="index.html#calculators">Calculators</a></li>
+                            <li><a href="index.html#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support & Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column footer-credentials">
+                        <h4>Credentials</h4>
+                        <div class="footer-certifications">
+                            <span class="certification">CA Registered</span>
+                            <span class="certification">Xero Partner</span>
+                            <span class="certification">Certified Tax Agent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2025 NLE Business Services Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

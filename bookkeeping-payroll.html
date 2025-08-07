@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookkeeping & Payroll | NLE Business Services</title>
+    <meta name="description" content="Comprehensive bookkeeping services with modern cloud-based solutions, full-service payroll management, and precise financial record-keeping for optimal business efficiency. QuickBooks & Xero specialists.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo-colour.png">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo-wrapper">
+                <a href="index.html">
+                    <img src="logo-colour.png" alt="NLE Tax & Accounting" class="logo">
+                </a>
+            </div>
+            <div class="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="tax-preparation.html" class="dropdown-item">Tax Preparation & Filing</a>
+                        <a href="management-accounts.html" class="dropdown-item">Software & Automation Consulting</a>
+                        <a href="bookkeeping-payroll.html" class="dropdown-item active">Bookkeeping & Payroll</a>
+                        <a href="tax-planning.html" class="dropdown-item">Tax Planning & Strategy</a>
+                        <a href="deceased-estates.html" class="dropdown-item">Deceased Estates</a>
+                        <a href="virtual-cfo.html" class="dropdown-item">Virtual CFO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Calculators</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item coming-soon">
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                        <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                        <path d="M8 10h.01"/>
+                                        <path d="M12 10h.01"/>
+                                        <path d="M16 10h.01"/>
+                                        <path d="M8 13h.01"/>
+                                        <path d="M12 13h.01"/>
+                                        <path d="M16 13h.01"/>
+                                        <path d="M8 16h.01"/>
+                                        <path d="M12 16h.01"/>
+                                        <path d="M16 16h.01"/>
+                                        <path d="M8 19h8"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-item-text">
+                                    <span class="dropdown-item-title">Reverse Payroll Calculator</span>
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item coming-soon">
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3v18h18"/>
+                                        <path d="M7 16l3-3 3 3 5-5"/>
+                                        <path d="M14 8h5v5"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-item-text">
+                                    <span class="dropdown-item-title">Negative Gearing Calculator</span>
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#calculators" class="nav-link">Calculators</a>
+                <a href="index.html#contact" class="cta-button">Contact Us</a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <a href="#" class="mobile-nav-link services-toggle">
+                    <span class="nav-link-text">Services</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-services-submenu">
+                    <a href="tax-preparation.html" class="mobile-nav-sublink">
+                        <span>Tax Preparation & Filing</span>
+                    </a>
+                    <a href="management-accounts.html" class="mobile-nav-sublink">
+                        <span>Software & Automation Consulting</span>
+                    </a>
+                    <a href="bookkeeping-payroll.html" class="mobile-nav-sublink active">
+                        <span>Bookkeeping & Payroll</span>
+                    </a>
+                    <a href="tax-planning.html" class="mobile-nav-sublink">
+                        <span>Tax Planning & Strategy</span>
+                    </a>
+                    <a href="deceased-estates.html" class="mobile-nav-sublink">
+                        <span>Deceased Estates</span>
+                    </a>
+                    <a href="virtual-cfo.html" class="mobile-nav-sublink">
+                        <span>Virtual CFO</span>
+                    </a>
+                </div>
+                <a href="#" class="mobile-nav-link calculators-toggle">
+                    <span>Calculators</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nav-link-arrow">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-calculators-submenu">
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                    <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                    <path d="M8 10h.01"/>
+                                    <path d="M12 10h.01"/>
+                                    <path d="M16 10h.01"/>
+                                    <path d="M8 13h.01"/>
+                                    <path d="M12 13h.01"/>
+                                    <path d="M16 13h.01"/>
+                                    <path d="M8 16h.01"/>
+                                    <path d="M12 16h.01"/>
+                                    <path d="M16 16h.01"/>
+                                    <path d="M8 19h8"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Reverse Payroll Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="M7 16l3-3 3 3 5-5"/>
+                                    <path d="M14 8h5v5"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Negative Gearing Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="index.html#about" class="mobile-nav-link">
+                    <span class="nav-link-text">About</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#" class="mobile-nav-link calculators-toggle">
+                    <span class="nav-link-text">Calculators</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-calculators-submenu">
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                    <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                    <path d="M8 10h.01"/>
+                                    <path d="M12 10h.01"/>
+                                    <path d="M16 10h.01"/>
+                                    <path d="M8 13h.01"/>
+                                    <path d="M12 13h.01"/>
+                                    <path d="M16 13h.01"/>
+                                    <path d="M8 16h.01"/>
+                                    <path d="M12 16h.01"/>
+                                    <path d="M16 16h.01"/>
+                                    <path d="M8 19h8"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Reverse Payroll Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="M7 16l3-3 3 3 5-5"/>
+                                    <path d="M14 8h5v5"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Negative Gearing Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="index.html#contact" class="mobile-nav-link">
+                    <span class="nav-link-text">Contact</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="index.html#contact" class="mobile-cta">Get Started Today</a>
+                <div class="mobile-menu-contact">
+                    <a href="tel:61451072412" class="mobile-contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>61 451 072 412</span>
+                    </a>
+                    <a href="mailto:info@nlesa.com.au" class="mobile-contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>info@nlesa.com.au</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Hero Section -->
+    <section class="service-hero-section">
+        <div class="service-hero-background">
+            <div class="geometric-patterns"></div>
+        </div>
+        <div class="service-hero-content">
+            <div class="service-hero-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+            </div>
+            <h1 class="service-hero-title">Bookkeeping & Payroll</h1>
+                                    <p class="service-hero-subtitle">Comprehensive bookkeeping services with modern cloud-based solutions, full-service payroll management, and precise financial record-keeping for optimal business efficiency and seamless operations.</p>
+            <div class="service-hero-cta">
+                <a href="index.html#contact" class="primary-cta">Get Started</a>
+                <a href="#service-details" class="secondary-cta">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Details Section -->
+    <section id="service-details" class="service-details-section">
+        <div class="container">
+            <div class="service-content-grid">
+                <div class="service-main-content">
+                    <div class="service-overview">
+                        <h2 class="section-title">Professional Financial Record Management</h2>
+                        <p class="service-description">
+                            Accurate bookkeeping is the foundation of successful business management. Our comprehensive bookkeeping and payroll services ensure your financial records are maintained to the highest standards, giving you complete visibility into your business performance whilst freeing you to focus on growth.
+                        </p>
+                        <p class="service-description">
+                            From daily transaction recording to complex payroll processing, we leverage cutting-edge cloud technology to deliver real-time financial insights. Our expert team ensures compliance with all Australian accounting standards and employment regulations.
+                        </p>
+                    </div>
+
+                    <div class="service-features-detailed">
+                        <h3 class="feature-section-title">Complete Financial Management</h3>
+                        <div class="feature-cards">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                        <polyline points="14,2 14,8 20,8"/>
+                                        <line x1="12" y1="18" x2="12" y2="12"/>
+                                        <line x1="9" y1="15" x2="15" y2="15"/>
+                                    </svg>
+                                </div>
+                                <h4>Daily Transaction Recording</h4>
+                                <p>Accurate recording of all business transactions including sales, purchases, expenses, and bank reconciliations.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M20 6L9 17l-5-5"/>
+                                    </svg>
+                                </div>
+                                <h4>Full-Service Payroll</h4>
+                                <p>Complete payroll processing including superannuation, PAYG withholding, and Single Touch Payroll compliance.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2v6.5"/>
+                                        <path d="M12 8.5V20"/>
+                                        <circle cx="12" cy="8.5" r="1.5"/>
+                                        <path d="M8 13a4 4 0 1 1 8 0"/>
+                                    </svg>
+                                </div>
+                                <h4>Cloud-Based Systems</h4>
+                                <p>QuickBooks Online and Xero implementation with real-time access to your financial data from anywhere.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M9 12l2 2 4-4"/>
+                                        <path d="M21 12c-1 0-3-1-3-3s2-3 3-3 3 1 3 3-2 3-3 3"/>
+                                        <path d="M3 12c1 0 3-1 3-3s-2-3-3-3-3 1-3 3 2 3 3 3"/>
+                                        <path d="M13 12h3"/>
+                                        <path d="M8 12h2"/>
+                                    </svg>
+                                </div>
+                                <h4>Financial Reporting</h4>
+                                <p>Monthly profit & loss statements, balance sheets, and cash flow reports.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-process">
+                        <h3 class="feature-section-title">Our Service Process</h3>
+                        <div class="process-steps">
+                            <div class="process-step">
+                                <div class="step-number">01</div>
+                                <div class="step-content">
+                                    <h4>System Setup</h4>
+                                    <p>We implement and configure your cloud accounting system with proper chart of accounts and integration setup.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">02</div>
+                                <div class="step-content">
+                                    <h4>Data Migration</h4>
+                                    <p>Seamless transfer of existing financial data and setup of automated bank feeds and integrations.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">03</div>
+                                <div class="step-content">
+                                    <h4>Ongoing Maintenance</h4>
+                                    <p>Daily transaction processing, monthly reconciliations, and regular financial reporting.</p>
+                                </div>
+                            </div>
+                            <div class="process-step">
+                                <div class="step-number">04</div>
+                                <div class="step-content">
+                                    <h4>Regular Reviews</h4>
+                                    <p>Monthly reviews of financial performance with recommendations for business improvement opportunities.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="service-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Key Benefits</h3>
+                        <ul class="benefits-list">
+                            <li>Real-time financial visibility</li>
+                            <li>Automated bank reconciliations</li>
+                            <li>Single Touch Payroll compliance</li>
+                            <li>Monthly financial reports</li>
+                            <li>Expense tracking & categorisation</li>
+                            <li>Dedicated bookkeeping support</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card quote-card">
+                        <a href="index.html#contact" class="sidebar-cta">Get Started</a>
+                    </div>
+
+                    <div class="sidebar-card contact-card">
+                        <h3>Need Help?</h3>
+                        <p>Speak with one of our bookkeeping specialists today.</p>
+                        <div class="contact-options">
+                            <a href="tel:61451072412" class="contact-option">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                                <span>61 451 072 412</span>
+                            </a>
+                            <a href="mailto:info@nlesa.com.au" class="contact-option">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>info@nlesa.com.au</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Services Section -->
+    <section class="related-services-section">
+        <div class="container">
+            <h2 class="section-title">Related Services</h2>
+            <div class="related-services-grid">
+                <a href="management-accounts.html" class="related-service-card">
+                    <div class="related-service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 3v18h18"/>
+                            <path d="M7 16l4-4 4 4 6-6"/>
+                            <circle cx="7" cy="16" r="1"/>
+                            <circle cx="11" cy="12" r="1"/>
+                            <circle cx="15" cy="16" r="1"/>
+                            <circle cx="21" cy="10" r="1"/>
+                        </svg>
+                    </div>
+                    <h3>Software & Automation Consulting</h3>
+                    <p>Strategic financial reporting and KPI tracking</p>
+                </a>
+                <a href="tax-preparation.html" class="related-service-card">
+                    <div class="related-service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3>Tax Preparation & Filing</h3>
+                    <p>Expert tax return preparation and compliance</p>
+                </a>
+                <a href="virtual-cfo.html" class="related-service-card">
+                    <div class="related-service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 3v18h18"/>
+                            <path d="M7 16l4-4 4 4 6-6"/>
+                            <circle cx="7" cy="16" r="1"/>
+                            <circle cx="11" cy="12" r="1"/>
+                            <circle cx="15" cy="16" r="1"/>
+                            <circle cx="21" cy="10" r="1"/>
+                        </svg>
+                    </div>
+                    <h3>Virtual CFO</h3>
+                    <p>Strategic financial leadership for growth</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="logo-colour.png" alt="NLE Business Services" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">
+                        Your trusted partner for comprehensive tax and accounting solutions. 
+                        Expert guidance, innovative technology, and personalised service.
+                    </p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:61451072412">61 451 072 412</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:info@nlesa.com.au">info@nlesa.com.au</a>
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>1A Tarton Road<br>Holden Hill, SA 5088</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="tax-preparation.html">Tax Preparation & Filing</a></li>
+                        <li><a href="management-accounts.html">Software & Automation Consulting</a></li>
+                        <li><a href="bookkeeping-payroll.html">Bookkeeping & Payroll</a></li>
+                        <li><a href="tax-planning.html">Tax Planning & Strategy</a></li>
+                        <li><a href="deceased-estates.html">Deceased Estates</a></li>
+                        <li><a href="virtual-cfo.html">Virtual CFO</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#calculators">Calculators</a></li>
+                        <li><a href="index.html#contact">Contact Us</a></li>
+                        <li><a href="#consultation">Free Consultation</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Support & Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column footer-credentials">
+                    <h4>Credentials</h4>
+                    <div class="footer-certifications">
+                        <span class="certification">CA Registered</span>
+                        <span class="certification">Xero Partner</span>
+                        <span class="certification">Certified Tax Agent</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLE Tax & Accounting - Your Financial Future, Calculated to Perfection</title>
+    <meta name="description" content="NLE Tax & Accounting offers innovative financial services including tax returns, bookkeeping, and tax planning. Experience the future of financial services.">
+    <link rel="icon" type="image/png" href="logo-colour.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo-wrapper">
+                <img src="logo-colour.png" alt="NLE Tax & Accounting" class="logo">
+            </div>
+            <div class="nav-menu">
+                <div class="nav-dropdown">
+                    <a href="#services" class="nav-link dropdown-toggle">Services</a>
+                    <div class="dropdown-menu">
+                        <a href="tax-preparation.html" class="dropdown-item">Tax Preparation & Filing</a>
+                        <a href="management-accounts.html" class="dropdown-item">Software & Automation Consulting</a>
+                        <a href="bookkeeping-payroll.html" class="dropdown-item">Bookkeeping & Payroll</a>
+                        <a href="tax-planning.html" class="dropdown-item">Tax Planning & Strategy</a>
+                        <a href="deceased-estates.html" class="dropdown-item">Deceased Estates</a>
+                        <a href="virtual-cfo.html" class="dropdown-item">Virtual CFO</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Calculators</a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item coming-soon">
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                        <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                        <path d="M8 10h.01"/>
+                                        <path d="M12 10h.01"/>
+                                        <path d="M16 10h.01"/>
+                                        <path d="M8 13h.01"/>
+                                        <path d="M12 13h.01"/>
+                                        <path d="M16 13h.01"/>
+                                        <path d="M8 16h.01"/>
+                                        <path d="M12 16h.01"/>
+                                        <path d="M16 16h.01"/>
+                                        <path d="M8 19h8"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-item-text">
+                                    <span class="dropdown-item-title">Reverse Payroll Calculator</span>
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" class="dropdown-item coming-soon">
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M3 3v18h18"/>
+                                        <path d="M7 16l3-3 3 3 5-5"/>
+                                        <path d="M14 8h5v5"/>
+                                    </svg>
+                                </div>
+                                <div class="dropdown-item-text">
+                                    <span class="dropdown-item-title">Negative Gearing Calculator</span>
+                                    <span class="coming-soon-badge">Coming Soon</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#calculators" class="nav-link">Calculators</a>
+                <a href="#contact" class="cta-button">Contact Us</a>
+            </div>
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background">
+            <canvas id="particle-canvas"></canvas>
+            <div class="geometric-patterns"></div>
+            <div class="hero-graph-lines">
+                <div class="hero-graph-line"></div>
+                <div class="hero-graph-line"></div>
+                <div class="hero-graph-line"></div>
+            </div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Your <span class="highlight">Financial</span> Future, 
+                <span class="no-break"><span class="highlight">Calculated</span> to <span class="highlight">Perfection</span></span>
+                <span class="cursor"></span>
+            </h1>
+            <p class="hero-subtitle">Experience the future of tax and accounting services with NLE's innovative approach to financial excellence.</p>
+            <div class="hero-cta-group">
+                <a href="#contact" class="primary-cta floating-orb">Discover Your Tax Advantage</a>
+                <a href="#services" class="secondary-cta">Explore Our Services</a>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <h2 class="section-title"><span class="no-break">Our Professional</span> Services</h2>
+                <p class="section-subtitle">Comprehensive accounting and tax solutions tailored to your business needs</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Tax Preparation & Filing</h3>
+                    <p class="service-description">Expert preparation of personal and business tax returns with maximum deduction identification and ATO compliance support.</p>
+                    <ul class="service-features">
+                        <li>Personal & Corporate Returns</li>
+                        <li>Online Filing & Digital Submission</li>
+                        <li>ATO Enquiry Defence & Support</li>
+                        <li>Prior Year Amendments</li>
+                    </ul>
+                    <a href="tax-preparation.html" class="service-cta">
+                        <span class="cta-text">Learn More</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 3v18h18"/>
+                            <path d="M7 16l4-4 4 4 6-6"/>
+                            <circle cx="7" cy="16" r="1"/>
+                            <circle cx="11" cy="12" r="1"/>
+                            <circle cx="15" cy="16" r="1"/>
+                            <circle cx="21" cy="10" r="1"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Virtual CFO</h3>
+                    <p class="service-description">Strategic financial leadership and guidance for growing businesses without the cost of a full-time Chief Financial Officer.</p>
+                    <ul class="service-features">
+                        <li>Financial Strategy & Planning</li>
+                        <li>Cash Flow Management</li>
+                        <li>Board Reporting & KPIs</li>
+                        <li>Business Growth Support</li>
+                    </ul>
+                    <a href="virtual-cfo.html" class="service-cta">
+                        <span class="cta-text">Learn More</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Bookkeeping & Payroll</h3>
+                    <p class="service-description">Comprehensive bookkeeping services with modern cloud-based solutions, full-service payroll management, and precise financial record-keeping for optimal business efficiency.</p>
+                    <ul class="service-features">
+                        <li>Xero setup & migration</li>
+                        <li>Monthly Financial Reports</li>
+                        <li>Payroll Processing & Tax</li>
+                        <li>Accounts Reconciliation</li>
+                    </ul>
+                    <a href="bookkeeping-payroll.html" class="service-cta">
+                        <span class="cta-text">Learn More</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5"/>
+                            <path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Tax Planning & Strategy</h3>
+                    <p class="service-description">Year-round tax planning strategies designed to minimise tax liability and maximise wealth preservation for individuals and businesses.</p>
+                    <ul class="service-features">
+                        <li>Multi-Year Tax Projections</li>
+                        <li>Business Structure Planning</li>
+                        <li>Pension & Estate Planning</li>
+                        <li>Capital Gains Tax Strategies</li>
+                    </ul>
+                    <a href="tax-planning.html" class="service-cta">
+                        <span class="cta-text">Learn More</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M8 2v4"/>
+                            <path d="M16 2v4"/>
+                            <rect width="18" height="18" x="3" y="4" rx="2"/>
+                            <path d="M3 10h18"/>
+                            <path d="M8 14h.01"/>
+                            <path d="M12 14h.01"/>
+                            <path d="M16 14h.01"/>
+                            <path d="M8 18h.01"/>
+                            <path d="M12 18h.01"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Deceased Estates</h3>
+                    <p class="service-description">Comprehensive estate administration and tax services to help navigate the complex legal and financial requirements following a death.</p>
+                    <ul class="service-features">
+                        <li>Deceased Estate Tax Returns</li>
+                        <li>Capital Gains Tax Calculations</li>
+                        <li>Cost Base Calculations</li>
+                        <li>ATO Liaison & Compliance</li>
+                    </ul>
+                    <a href="deceased-estates.html" class="service-cta">
+                        <span class="cta-text">Learn More</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                            <path d="M7 10h5l-2 3h4l-2 3"/>
+                        </svg>
+                    </div>
+                    <h3 class="service-title">Software & Automation Consulting</h3>
+                    <p class="service-description">Expert guidance to modernise your business with the right software solutions and automation tools for maximum efficiency.</p>
+                    <ul class="service-features">
+                        <li>Xero Migration & Setup</li>
+                        <li>Process Automation</li>
+                        <li>Software Recommendations</li>
+                        <li>Workflow Optimisation</li>
+                    </ul>
+                    <a href="management-accounts.html" class="service-cta">
+                        <span class="cta-text">Learn More</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="m9 18 6-6-6-6"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">About NLE<br/></h2>
+                    <div class="about-narrative">
+                        <p class="lead-paragraph">
+                            NLE Business Services represents the evolution of modern accounting. We're not just another accounting firm – we're your strategic partners in navigating the complexities of today's business landscape.
+                        </p>
+                        
+                        <p>
+                            Founded on the principles of innovation and excellence, NLE combines traditional accounting expertise with technology to deliver unparalleled service. Our approach is built around understanding your unique business needs and providing tailored solutions that drive growth and success.
+                        </p>
+                        
+                        <p>
+                            At NLE, we believe that exceptional accounting goes beyond number-crunching. We leverage advanced digital tools, automated processes, and real-time analytics to provide insights that matter. Our cloud-based solutions ensure you have access to your financial data anytime, anywhere, whilst maintaining the highest levels of security and compliance.
+                        </p>
+                    </div>
+                    
+                    <div class="nle-values">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>Innovation-Driven</h4>
+                                <p>Embracing the latest technology to streamline your financial processes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>Trust & Reliability</h4>
+                                <p>Building lasting relationships through transparency and consistent excellence</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <circle cx="12" cy="12" r="6"/>
+                                    <circle cx="12" cy="12" r="2"/>
+                                </svg>
+                            </div>
+                            <div class="value-content">
+                                <h4>Results-Focused</h4>
+                                <p>Delivering measurable outcomes that contribute to your business success</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="nle-commitment">
+                        <h3>Our Commitment to Excellence</h3>
+                        <div class="commitment-stats">
+                            <div class="stat-item">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Dedicated Service</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">24/7</div>
+                                <div class="stat-label">Secure Cloud Platform</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number">Expert</div>
+                                <div class="stat-label">Qualified Professionals</div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section id="calculators" class="calculators-section">
+        <div class="container">
+            <div class="calculators-header">
+                <h2 class="section-title">Financial Calculators</h2>
+                <p class="section-subtitle">Powerful tools to help you make informed financial decisions</p>
+            </div>
+            
+            <div class="calculators-grid">
+                <div class="calculator-card coming-soon-card">
+                    <div class="calculator-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="4" y="2" width="16" height="20" rx="2"/>
+                            <rect x="6" y="4" width="12" height="3" rx="1"/>
+                            <path d="M8 10h.01"/>
+                            <path d="M12 10h.01"/>
+                            <path d="M16 10h.01"/>
+                            <path d="M8 13h.01"/>
+                            <path d="M12 13h.01"/>
+                            <path d="M16 13h.01"/>
+                            <path d="M8 16h.01"/>
+                            <path d="M12 16h.01"/>
+                            <path d="M16 16h.01"/>
+                            <path d="M8 19h8"/>
+                        </svg>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Reverse Payroll Calculator</h3>
+                        <p class="calculator-description">Calculate gross salary from net take-home pay including taxes, superannuation, and other deductions.</p>
+                        <div class="calculator-features">
+                            <span class="feature-tag">Tax Calculations</span>
+                            <span class="feature-tag">Super Contributions</span>
+                            <span class="feature-tag">HECS/HELP</span>
+                        </div>
+                        <div class="calculator-cta-container">
+                            <button class="calculator-cta coming-soon" disabled>
+                                <span class="cta-text">Coming Soon</span>
+                                <div class="coming-soon-indicator">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12,6 12,12 16,14"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calculator-card coming-soon-card">
+                    <div class="calculator-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"/>
+                            <path d="M7 16l3-3 3 3 5-5"/>
+                            <path d="M14 8h5v5"/>
+                        </svg>
+                    </div>
+                    <div class="calculator-content">
+                        <h3 class="calculator-title">Negative Gearing Calculator</h3>
+                        <p class="calculator-description">Analyse rental property investments and calculate potential tax benefits from negative gearing strategies.</p>
+                        <div class="calculator-features">
+                            <span class="feature-tag">Property Analysis</span>
+                            <span class="feature-tag">Tax Benefits</span>
+                            <span class="feature-tag">Cash Flow</span>
+                        </div>
+                        <div class="calculator-cta-container">
+                            <button class="calculator-cta coming-soon" disabled>
+                                <span class="cta-text">Coming Soon</span>
+                                <div class="coming-soon-indicator">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12,6 12,12 16,14"/>
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calculators-footer">
+                <div class="calculators-info">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 16v-4"/>
+                            <path d="M12 8h.01"/>
+                        </svg>
+                    </div>
+                    <div class="info-content">
+                        <h4>Need Help with Your Calculations?</h4>
+                        <p>Our expert accountants can provide personalised advice and help you understand your financial situation better.</p>
+                        <a href="#contact" class="info-cta">Get Professional Advice</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title">Ready to Transform Your Financial Future?</h2>
+                <p class="section-subtitle">Get expert accounting and tax advice tailored to your needs. Start with a free consultation today.</p>
+            </div>
+            
+            <div class="contact-content">
+                <div class="contact-cards">
+                    <div class="contact-card contact-form-card">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                    <path d="M8 9h8"/>
+                                    <path d="M8 13h6"/>
+                                </svg>
+                            </div>
+                            <h3>Send Us a Message</h3>
+                            <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                        </div>
+                        
+                        <form id="consultation-form" class="modern-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="name">Full Name</label>
+                                    <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(08) XXXX XXXX">
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Service Interest</label>
+                                    <select id="service" name="service" required>
+                                        <option value="">Select a service</option>
+                                        <option value="tax-preparation">Tax Preparation & Filing</option>
+                                        <option value="management-accounts">Software & Automation Consulting</option>
+                                        <option value="bookkeeping">Bookkeeping & Payroll</option>
+                                        <option value="tax-planning">Tax Planning & Strategy</option>
+                                        <option value="deceased-estates">Deceased Estates</option>
+                                        <option value="virtual-cfo">Virtual CFO</option>
+                                        <option value="consultation">General Consultation</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell us about your accounting needs and how we can help..." rows="4"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <span>Schedule Free Consultation</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m9 18 6-6-6-6"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="contact-info-cards">
+                        <div class="contact-card info-card">
+                            <div class="info-header">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                </div>
+                                <h4>Call Us Today</h4>
+                            </div>
+                            <p class="info-description">Speak directly with our expert team</p>
+                            <div class="info-details">
+                                <a href="tel:+61451072412" class="info-link">61 451 072 412</a>
+                                <span class="info-note">Free initial consultation</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card info-card">
+                            <div class="info-header">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                                <h4>Email Us</h4>
+                            </div>
+                            <p class="info-description">Send us your questions anytime</p>
+                            <div class="info-details">
+                                <a href="mailto:info@nlesa.com.au" class="info-link">info@nlesa.com.au</a>
+                                <span class="info-note">Response within 24 hours</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card info-card">
+                            <div class="info-header">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                        <circle cx="12" cy="10" r="3"/>
+                                    </svg>
+                                </div>
+                                <h4>Visit Our Office</h4>
+                            </div>
+                            <p class="info-description">Meet us in person for detailed consultation</p>
+                            <div class="info-details">
+                                <span class="info-address">1A Tarton Road<br>Holden Hill, SA 5088</span>
+                                <span class="info-note">By appointment only</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-card info-card hours-card">
+                            <div class="info-header">
+                                <div class="info-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <polyline points="12,6 12,12 16,14"/>
+                                    </svg>
+                                </div>
+                                <h4>Business Hours</h4>
+                            </div>
+                            <div class="hours-list">
+                                <div class="hours-item">
+                                    <span class="day">Monday - Friday</span>
+                                    <span class="time">9:00 AM - 6:00 PM</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Saturday</span>
+                                    <span class="time">10:00 AM - 2:00 PM</span>
+                                </div>
+                                <div class="hours-item">
+                                    <span class="day">Sunday</span>
+                                    <span class="time">Closed</span>
+                                </div>
+                                <div class="emergency-note">
+                                    <span>Emergency support available 24/7 for existing clients</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-grid">
+                    <div class="footer-column footer-brand">
+                        <img src="logo-colour.png" alt="NLE Business Services" class="footer-logo">
+                        <p class="footer-description">Leading the future of accounting with innovative solutions, expert guidance, and unwavering commitment to your financial success.</p>
+                        <div class="footer-contact">
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>1A Tarton Road, Holden Hill, SA</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <polyline points="22,6 12,13 2,6"/>
+                                </svg>
+                                <span>info@nlesa.com.au</span>
+                            </div>
+                            <div class="contact-item">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                </svg>
+                                <a href="tel:+61451072412">61 451 072 412</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="#services">Tax Preparation & Filing</a></li>
+                            <li><a href="#services">Software & Automation Consulting</a></li>
+                            <li><a href="#services">Bookkeeping & Payroll</a></li>
+                            <li><a href="#services">Tax Planning & Strategy</a></li>
+                            <li><a href="#services">Business Activity Statements</a></li>
+                            <li><a href="#services">Company Tax</a></li>
+                            <li><a href="#services">Deceased Estates</a></li>
+                            <li><a href="#services">Virtual CFO</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Company</h4>
+                        <ul class="footer-links">
+                            <li><a href="#about">About NLE</a></li>
+                            <li><a href="#calculators">Calculators</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support & Legal</h4>
+                        <ul class="footer-links">
+                            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column footer-credentials">
+                        <h4>Credentials</h4>
+                        <div class="footer-certifications">
+                            <span class="certification">CA Registered</span>
+                            <span class="certification">Xero Partner</span>
+                            <span class="certification">Certified Tax Agent</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p class="footer-copyright">&copy; 2025 NLE Business Services Ltd.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu-content">
+            <nav class="mobile-nav">
+                <a href="#" class="mobile-nav-link services-toggle">
+                    <span class="nav-link-text">Services</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-services-submenu">
+                    <a href="tax-preparation.html" class="mobile-nav-sublink">
+                        <span>Tax Preparation & Filing</span>
+                    </a>
+                    <a href="management-accounts.html" class="mobile-nav-sublink">
+                        <span>Software & Automation Consulting</span>
+                    </a>
+                    <a href="bookkeeping-payroll.html" class="mobile-nav-sublink">
+                        <span>Bookkeeping & Payroll</span>
+                    </a>
+                    <a href="tax-planning.html" class="mobile-nav-sublink">
+                        <span>Tax Planning & Strategy</span>
+                    </a>
+                    <a href="deceased-estates.html" class="mobile-nav-sublink">
+                        <span>Deceased Estates</span>
+                    </a>
+                    <a href="virtual-cfo.html" class="mobile-nav-sublink">
+                        <span>Virtual CFO</span>
+                    </a>
+                </div>
+                <a href="#" class="mobile-nav-link calculators-toggle">
+                    <span class="nav-link-text">Calculators</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <div class="mobile-calculators-submenu">
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="4" y="2" width="16" height="20" rx="2"/>
+                                    <rect x="6" y="4" width="12" height="3" rx="1"/>
+                                    <path d="M8 10h.01"/>
+                                    <path d="M12 10h.01"/>
+                                    <path d="M16 10h.01"/>
+                                    <path d="M8 13h.01"/>
+                                    <path d="M12 13h.01"/>
+                                    <path d="M16 13h.01"/>
+                                    <path d="M8 16h.01"/>
+                                    <path d="M12 16h.01"/>
+                                    <path d="M16 16h.01"/>
+                                    <path d="M8 19h8"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Reverse Payroll Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#" class="mobile-nav-sublink coming-soon">
+                        <div class="mobile-nav-sublink-content">
+                            <div class="mobile-nav-sublink-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 3v18h18"/>
+                                    <path d="M7 16l3-3 3 3 5-5"/>
+                                    <path d="M14 8h5v5"/>
+                                </svg>
+                            </div>
+                            <div class="mobile-nav-sublink-text">
+                                <span class="mobile-nav-sublink-title">Negative Gearing Calculator</span>
+                                <span class="coming-soon-badge">Coming Soon</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <a href="#about" class="mobile-nav-link">
+                    <span class="nav-link-text">About</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#calculators" class="mobile-nav-link">
+                    <span class="nav-link-text">Calculators</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+                <a href="#contact" class="mobile-nav-link">
+                    <span class="nav-link-text">Contact</span>
+                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m9 18 6-6-6-6"/>
+                    </svg>
+                </a>
+            </nav>
+            <div class="mobile-menu-footer">
+                <a href="#contact" class="mobile-cta">Get Started Today</a>
+                <div class="mobile-menu-contact">
+                    <a href="tel:+61451072412" class="mobile-contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <span>61 451 072 412</span>
+                    </a>
+                    <a href="mailto:info@nlesa.com.au" class="mobile-contact-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <span>info@nlesa.com.au</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
