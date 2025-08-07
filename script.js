@@ -313,28 +313,19 @@ function initMobileMenu() {
 function initFormHandling() {
     const form = document.getElementById('consultation-form');
     
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        // Add loading state
-        const submitBtn = form.querySelector('.submit-btn');
-        submitBtn.classList.add('loading');
-        submitBtn.textContent = 'Sending...';
-        
-        // Simulate form submission
-        setTimeout(() => {
-            submitBtn.classList.remove('loading');
-            submitBtn.textContent = 'Thank You!';
-            submitBtn.style.background = '#4CAF50';
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            // Add loading state but don't prevent default submission
+            const submitBtn = form.querySelector('.submit-btn');
+            if (submitBtn) {
+                submitBtn.classList.add('loading');
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+            }
             
-            // Reset form after delay
-            setTimeout(() => {
-                form.reset();
-                submitBtn.textContent = 'Schedule Free Consultation';
-                submitBtn.style.background = '';
-            }, 3000);
-        }, 1500);
-    });
+            // Let Netlify handle the form submission naturally
+        });
+    }
 }
 
 // Smooth Scrolling
