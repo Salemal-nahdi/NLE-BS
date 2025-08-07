@@ -487,7 +487,8 @@
                             <p>Fill out the form below and we'll get back to you within 24 hours</p>
                         </div>
                         
-                        <form id="consultation-form" class="modern-form">
+                        <form id="consultation-form" name="contact" method="POST" action="/success.html" netlify class="modern-form">
+                            <input type="hidden" name="form-name" value="contact" />
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Full Name</label>
