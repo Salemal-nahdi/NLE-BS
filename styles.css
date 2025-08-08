@@ -218,8 +218,12 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: center; /* Ensure horizontal centering on all screens */
     background: linear-gradient(180deg, var(--deep-navy) 0%, var(--sky-blue) 100%);
     overflow: hidden;
+    /* Respect notches and rounded corners on iOS devices */
+    padding-left: max(1rem, env(safe-area-inset-left));
+    padding-right: max(1rem, env(safe-area-inset-right));
 }
 
 .hero-background {
@@ -280,6 +284,7 @@ body {
     text-align: center;
     animation: fadeInUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     color: var(--white);
+    width: 100%; /* prevent overflow-induced horizontal shift */
 }
 
 .hero-title {
@@ -287,6 +292,7 @@ body {
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 1.5rem;
+    text-wrap: balance; /* Improve line breaking for long headings */
 }
 
 .hero-title .highlight {
@@ -327,6 +333,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     line-height: 1.4;
+    text-wrap: pretty;
 }
 
 .hero-cta-group {
@@ -2080,7 +2087,8 @@ body.mobile-menu-open .mobile-menu-toggle span {
     }
     
     .hero-section {
-        padding-top: 8rem;
+        /* Adapt top spacing to device notch/status bar on mobile */
+        padding-top: clamp(6.5rem, 9vh, 8.25rem);
     }
     
     .hero-title {
@@ -2223,14 +2231,14 @@ body.mobile-menu-open .mobile-menu-toggle span {
 
 @media (max-width: 640px) {
     .hero-section {
-        padding-top: 7.5rem;
+        padding-top: clamp(6.25rem, 9vh, 7.75rem);
     }
 }
 
 @media (max-width: 480px) {
     .hero-section {
         padding: 1.75rem 1rem;
-        padding-top: 6.75rem;
+        padding-top: clamp(6rem, 10vh, 7rem);
         min-height: 100vh;
     }
     
@@ -2289,7 +2297,7 @@ body.mobile-menu-open .mobile-menu-toggle span {
 @media (max-width: 375px) {
     .hero-section {
         padding: 1.5rem 1rem;
-        padding-top: 6.25rem;
+        padding-top: clamp(5.5rem, 10vh, 6.5rem);
         min-height: 100vh;
     }
     
@@ -2331,7 +2339,7 @@ body.mobile-menu-open .mobile-menu-toggle span {
 @media (max-width: 320px) {
     .hero-section {
         padding: 1.25rem 0.75rem;
-        padding-top: 6rem;
+        padding-top: clamp(5rem, 12vh, 6rem);
         min-height: 100vh;
     }
     
