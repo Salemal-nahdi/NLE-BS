@@ -293,6 +293,7 @@ body {
     line-height: 1.1;
     margin-bottom: 1.5rem;
     text-wrap: balance; /* Improve line breaking for long headings */
+    margin-inline: auto; /* ensure centering in logical direction */
 }
 
 .hero-title .highlight {
@@ -300,6 +301,17 @@ body {
     position: relative;
     display: inline-block;
     animation: glowPulse 3s ease-in-out infinite;
+}
+
+/* Ensure each line of the hero title centers as a block on small screens */
+.hero-title-line {
+    display: inline-block;
+}
+
+@media (max-width: 640px) {
+    .hero-title-line {
+        display: block;
+    }
 }
 
 .no-break {
@@ -2233,6 +2245,15 @@ body.mobile-menu-open .mobile-menu-toggle span {
     .hero-section {
         padding-top: clamp(6.25rem, 9vh, 7.75rem);
     }
+    /* Allow line breaks for long hero title phrase on mid-sized phones */
+    .hero-title .no-break {
+        white-space: normal;
+    }
+    .hero-title {
+        max-width: 24ch;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2250,7 +2271,11 @@ body.mobile-menu-open .mobile-menu-toggle span {
         font-size: 2.25rem;
         line-height: 1.1;
         margin-bottom: 1.25rem;
+        max-width: 20ch; /* Tighten measure for nicer centering */
+        margin-left: auto;
+        margin-right: auto;
     }
+    .hero-title .no-break { white-space: normal; }
     
     .hero-subtitle {
         font-size: 1.1rem;
