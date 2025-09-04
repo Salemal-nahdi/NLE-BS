@@ -224,6 +224,9 @@ body {
     /* Respect notches and rounded corners on iOS devices */
     padding-left: max(1rem, env(safe-area-inset-left));
     padding-right: max(1rem, env(safe-area-inset-right));
+    /* Prevent mobile jitter by stabilizing initial layout */
+    will-change: auto;
+    contain: layout style;
 }
 
 .hero-background {
@@ -282,9 +285,11 @@ body {
     margin: 0 auto;
     padding: 0 2rem;
     text-align: center;
-    animation: fadeInUp 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     color: var(--white);
     width: 100%; /* prevent overflow-induced horizontal shift */
+    /* Remove initial animation to prevent mobile jitter */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero-title {
@@ -2082,6 +2087,39 @@ body.mobile-menu-open .mobile-menu-toggle span {
         padding: 0 1.5rem;
         position: relative;
         justify-content: center;
+    }
+    
+    /* Mobile hero optimizations to prevent jitter */
+    .hero-section {
+        /* Use fixed values instead of clamp to reduce calculation overhead */
+        padding-top: 7rem;
+        /* Disable complex animations on mobile */
+        contain: layout style paint;
+    }
+    
+    .hero-content {
+        /* Remove complex animations on mobile load */
+        animation: none;
+        transform: none;
+        opacity: 1;
+        /* Stabilize layout */
+        will-change: auto;
+    }
+    
+    /* Reduce particle canvas performance impact on mobile */
+    #particle-canvas {
+        opacity: 0.3;
+        will-change: auto;
+    }
+    
+    /* Disable complex animations that cause jitter */
+    .hero-title .highlight {
+        animation: none;
+    }
+    
+    .primary-cta {
+        animation: none;
+        transform: none;
     }
     
     .logo-wrapper {

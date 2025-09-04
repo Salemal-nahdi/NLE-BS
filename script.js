@@ -3,12 +3,27 @@ let particleCanvas, particleCtx;
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    initParticleAnimation();
+    // Delay heavy animations on mobile to prevent jitter
+    const isMobile = window.innerWidth <= 768;
+    
+    if (isMobile) {
+        // Delay particle animation to prevent initial jitter
+        setTimeout(() => {
+            initParticleAnimation();
+        }, 1000);
+        // Delay typewriter effect on mobile
+        setTimeout(() => {
+            initTypewriterEffect();
+        }, 1500);
+    } else {
+        initParticleAnimation();
+        initTypewriterEffect();
+    }
+    
     initScrollEffects();
     initMobileMenu();
     initFormHandling();
     initSmoothScrolling();
-    initTypewriterEffect();
 });
 
 // Particle Animation System
@@ -56,9 +71,10 @@ function initParticleAnimation() {
         }
     }
     
-    // Create particles
+    // Create particles (reduce count on mobile)
     const particles = [];
-    const particleCount = 100;
+    const isMobile = window.innerWidth <= 768;
+    const particleCount = isMobile ? 30 : 100;
     for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
     }
@@ -387,8 +403,10 @@ function initTypewriterEffect() {
         }
     }
     
-    // Start typewriter immediately
-    setTimeout(typeWriter, 200);
+    // Start typewriter with longer delay on mobile to prevent jitter
+    const isMobile = window.innerWidth <= 768;
+    const delay = isMobile ? 800 : 200;
+    setTimeout(typeWriter, delay);
 }
 
 // Service Hexagon Interactions
