@@ -38,7 +38,7 @@ class NegativeGearingCalculator {
         const inputs = [
             'buildingCost', 'weeklyRent', 'loanAmount', 'interestRate',
             'managementFees', 'councilRates', 'waterRates', 'insurance', 'maintenance',
-            'otherExpenses', 'annualIncome', 'helpDebt', 'projectionYears', 'rentIncrease'
+            'otherExpenses', 'incomeYear', 'annualIncome', 'helpDebt', 'projectionYears', 'rentIncrease'
         ];
 
         // Add event listeners to all inputs
@@ -63,6 +63,7 @@ class NegativeGearingCalculator {
             insurance: parseFloat(document.getElementById('insurance').value) || 0,
             maintenance: parseFloat(document.getElementById('maintenance').value) || 0,
             otherExpenses: parseFloat(document.getElementById('otherExpenses').value) || 0,
+            incomeYear: document.getElementById('incomeYear').value,
             annualIncome: parseFloat(document.getElementById('annualIncome').value) || 0,
             helpDebt: document.getElementById('helpDebt').value === 'yes',
             projectionYears: parseInt(document.getElementById('projectionYears').value) || 1,
@@ -75,18 +76,48 @@ class NegativeGearingCalculator {
         return buildingCost * 0.025;
     }
 
-    calculateTaxBracket(income, helpDebt = false) {
-        // 2024-25 Australian Tax Brackets
-        const taxBrackets = [
-            { min: 0, max: 18200, rate: 0 },
-            { min: 18201, max: 45000, rate: 0.19 },
-            { min: 45001, max: 120000, rate: 0.325 },
-            { min: 120001, max: 180000, rate: 0.37 },
-            { min: 180001, max: Infinity, rate: 0.45 }
-        ];
+    calculateTaxBracket(income, helpDebt = false, incomeYear = '2024-25') {
+        // Australian Tax Brackets by year
+        const taxBracketsByYear = {
+            '2024-25': {
+                brackets: [
+                    { min: 0, max: 18200, rate: 0 },
+                    { min: 18201, max: 45000, rate: 0.19 },
+                    { min: 45001, max: 120000, rate: 0.325 },
+                    { min: 120001, max: 180000, rate: 0.37 },
+                    { min: 180001, max: Infinity, rate: 0.45 }
+                ],
+                medicareThreshold: 23226,
+                helpThreshold: 51550
+            },
+            '2023-24': {
+                brackets: [
+                    { min: 0, max: 18200, rate: 0 },
+                    { min: 18201, max: 45000, rate: 0.19 },
+                    { min: 45001, max: 120000, rate: 0.325 },
+                    { min: 120001, max: 180000, rate: 0.37 },
+                    { min: 180001, max: Infinity, rate: 0.45 }
+                ],
+                medicareThreshold: 23226,
+                helpThreshold: 51550
+            },
+            '2022-23': {
+                brackets: [
+                    { min: 0, max: 18200, rate: 0 },
+                    { min: 18201, max: 45000, rate: 0.19 },
+                    { min: 45001, max: 120000, rate: 0.325 },
+                    { min: 120001, max: 180000, rate: 0.37 },
+                    { min: 180001, max: Infinity, rate: 0.45 }
+                ],
+                medicareThreshold: 23226,
+                helpThreshold: 48361
+            }
+        };
 
+        const yearData = taxBracketsByYear[incomeYear] || taxBracketsByYear['2024-25'];
+        
         let marginalRate = 0;
-        for (const bracket of taxBrackets) {
+        for (const bracket of yearData.brackets) {
             if (income > bracket.min && income <= bracket.max) {
                 marginalRate = bracket.rate;
                 break;
@@ -94,12 +125,12 @@ class NegativeGearingCalculator {
         }
 
         // Add Medicare Levy (2%)
-        if (income > 23226) { // Medicare levy threshold
+        if (income > yearData.medicareThreshold) {
             marginalRate += 0.02;
         }
 
         // Add HELP debt repayment if applicable
-        if (helpDebt && income > 51550) {
+        if (helpDebt && income > yearData.helpThreshold) {
             // Simplified HELP rate - actual rates vary by income
             marginalRate += 0.01; // 1% additional for HELP debt
         }
@@ -134,7 +165,7 @@ class NegativeGearingCalculator {
         const netRentalIncome = annualRentalIncome - totalExpenses - annualInterest;
         
         // Calculate tax benefit
-        const marginalTaxRate = this.calculateTaxBracket(inputs.annualIncome, inputs.helpDebt);
+        const marginalTaxRate = this.calculateTaxBracket(inputs.annualIncome, inputs.helpDebt, inputs.incomeYear);
         const taxBenefit = Math.abs(Math.min(0, netRentalIncome)) * marginalTaxRate + 
                           buildingDepreciation * marginalTaxRate;
         
@@ -220,7 +251,7 @@ class NegativeGearingCalculator {
             const cashFlow = annualRentalIncome - totalExpenses - annualInterest;
             
             // Calculate tax benefit
-            const marginalTaxRate = this.calculateTaxBracket(inputs.annualIncome, inputs.helpDebt);
+            const marginalTaxRate = this.calculateTaxBracket(inputs.annualIncome, inputs.helpDebt, inputs.incomeYear);
             const taxBenefit = Math.abs(Math.min(0, cashFlow)) * marginalTaxRate + 
                               buildingDepreciation * marginalTaxRate;
             
