@@ -10,7 +10,7 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"></noscript>
 </head>
-<body>
+<body class="calculator-page">
     <!-- Header -->
     <header class="main-header">
         <nav class="nav-container">
@@ -112,14 +112,7 @@
                             <div class="form-group">
                                 <label for="buildingCost">Building Construction Cost</label>
                                 <input type="number" id="buildingCost" placeholder="450000" min="0" step="1000">
-                                <small class="input-help">Enter the cost of the building structure (excluding land)</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="constructionDate">Construction Date</label>
-                                <select id="constructionDate">
-                                    <option value="post-1987">After 15 Sept 1987 (2.5% depreciation)</option>
-                                    <option value="pre-1987">Before 15 Sept 1987 (No building depreciation)</option>
-                                </select>
+                                <small class="input-help">Enter the cost of the building structure (excluding land). 2.5% annual depreciation applied.</small>
                             </div>
                             <div class="form-group">
                                 <label for="weeklyRent">Weekly Rental Income</label>

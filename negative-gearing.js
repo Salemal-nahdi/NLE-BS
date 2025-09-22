@@ -36,7 +36,7 @@ class NegativeGearingCalculator {
     setupEventListeners() {
         // Get all input elements
         const inputs = [
-            'buildingCost', 'constructionDate', 'weeklyRent', 'loanAmount', 'interestRate',
+            'buildingCost', 'weeklyRent', 'loanAmount', 'interestRate',
             'managementFees', 'councilRates', 'waterRates', 'insurance', 'maintenance',
             'otherExpenses', 'annualIncome', 'helpDebt', 'projectionYears', 'rentIncrease'
         ];
@@ -54,7 +54,6 @@ class NegativeGearingCalculator {
     getInputValues() {
         return {
             buildingCost: parseFloat(document.getElementById('buildingCost').value) || 0,
-            constructionDate: document.getElementById('constructionDate').value,
             weeklyRent: parseFloat(document.getElementById('weeklyRent').value) || 0,
             loanAmount: parseFloat(document.getElementById('loanAmount').value) || 0,
             interestRate: parseFloat(document.getElementById('interestRate').value) || 0,
@@ -71,13 +70,9 @@ class NegativeGearingCalculator {
         };
     }
 
-    calculateBuildingDepreciation(buildingCost, constructionDate) {
-        // Post Sept 15, 1987: 2.5% per year for 40 years
-        if (constructionDate === 'post-1987') {
-            return buildingCost * 0.025;
-        }
-        // Pre-1987: No building depreciation
-        return 0;
+    calculateBuildingDepreciation(buildingCost) {
+        // Standard 2.5% per year building depreciation
+        return buildingCost * 0.025;
     }
 
     calculateTaxBracket(income, helpDebt = false) {
@@ -130,10 +125,7 @@ class NegativeGearingCalculator {
                              inputs.maintenance + inputs.otherExpenses;
         
         // Calculate building depreciation
-        const buildingDepreciation = this.calculateBuildingDepreciation(
-            inputs.buildingCost, 
-            inputs.constructionDate
-        );
+        const buildingDepreciation = this.calculateBuildingDepreciation(inputs.buildingCost);
         
         // Calculate total tax deductions
         const totalDeductions = totalExpenses + annualInterest + buildingDepreciation;
@@ -222,10 +214,7 @@ class NegativeGearingCalculator {
             const annualInterest = inputs.loanAmount * (inputs.interestRate / 100);
             
             // Calculate depreciation
-            const buildingDepreciation = this.calculateBuildingDepreciation(
-                inputs.buildingCost, 
-                inputs.constructionDate
-            );
+            const buildingDepreciation = this.calculateBuildingDepreciation(inputs.buildingCost);
             
             // Calculate cash flow
             const cashFlow = annualRentalIncome - totalExpenses - annualInterest;
