@@ -3835,30 +3835,7 @@ body.mobile-menu-open .mobile-menu-toggle span {
     }
 }
 
-/* Calculator Page Header Fix */
-.calculator-page .main-header {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(69, 157, 216, 0.1);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-}
-
-.calculator-page .logo {
-    filter: none;
-}
-
-.calculator-page .nav-link {
-    color: var(--deep-navy);
-}
-
-.calculator-page .nav-link:hover {
-    color: var(--sky-blue);
-}
-
-.calculator-page .cta-button {
-    background: var(--sky-blue);
-    color: var(--white);
-}
+/* Calculator Page uses standard header behavior */
 
 /* Calculator Styles */
 .calculator-main-section {
