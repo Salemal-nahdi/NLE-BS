@@ -3921,7 +3921,9 @@ body.mobile-menu-open .mobile-menu-toggle span {
     position: sticky;
     top: 2rem;
     max-height: calc(100vh - 4rem);
-    overflow-y: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .results-card {
@@ -3930,6 +3932,10 @@ body.mobile-menu-open .mobile-menu-toggle span {
     box-shadow: 0 8px 30px rgba(69, 157, 216, 0.15);
     border: 1px solid rgba(69, 157, 216, 0.2);
     margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
 }
 
 .results-title {
@@ -3940,6 +3946,16 @@ body.mobile-menu-open .mobile-menu-toggle span {
     font-size: 1.3rem;
     font-weight: 700;
     border-radius: 16px 16px 0 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    flex-shrink: 0;
+}
+
+.results-content {
+    flex: 1;
+    overflow-y: auto;
+    min-height: 0;
 }
 
 .results-summary {
