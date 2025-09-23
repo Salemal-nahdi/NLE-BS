@@ -3845,7 +3845,7 @@ body.mobile-menu-open .mobile-menu-toggle span {
 
 .calculator-layout {
     display: grid;
-    grid-template-columns: 1fr 500px;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
     max-width: 1400px;
     margin: 0 auto;
@@ -3918,10 +3918,9 @@ body.mobile-menu-open .mobile-menu-toggle span {
 }
 
 .calculator-results {
-    position: sticky;
-    top: 2rem;
-    max-height: calc(100vh - 4rem);
-    overflow: hidden;
+    position: static;
+    max-height: none;
+    overflow: visible;
     display: flex;
     flex-direction: column;
 }
@@ -3946,16 +3945,15 @@ body.mobile-menu-open .mobile-menu-toggle span {
     font-size: 1.3rem;
     font-weight: 700;
     border-radius: 16px 16px 0 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
+    position: static;
+    z-index: auto;
     flex-shrink: 0;
 }
 
 .results-content {
     flex: 1;
-    overflow-y: auto;
-    min-height: 0;
+    overflow: visible;
+    min-height: auto;
 }
 
 .results-summary {
@@ -3998,6 +3996,22 @@ body.mobile-menu-open .mobile-menu-toggle span {
 
 .result-value.negative {
     color: #dc3545;
+}
+
+/* Table cell styling for positive/negative values */
+.projection-table td.positive {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.projection-table td.negative {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.projection-table td.neutral {
+    color: #6c757d;
+    font-weight: 600;
 }
 
 .result-value.neutral {
@@ -4052,13 +4066,20 @@ body.mobile-menu-open .mobile-menu-toggle span {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
+    table-layout: auto; /* Auto layout for better spacing */
 }
 
 .projection-table th,
 .projection-table td {
-    padding: 0.75rem 0.5rem;
+    padding: 0.75rem 0.8rem;
     text-align: right;
     border-bottom: 1px solid rgba(69, 157, 216, 0.1);
+    white-space: nowrap;
+}
+
+/* Make projection table span full width across both columns */
+.projection-table {
+    grid-column: 1 / -1;
 }
 
 .projection-table th {
@@ -4076,6 +4097,18 @@ body.mobile-menu-open .mobile-menu-toggle span {
 .chart-container {
     padding: 2rem;
     border-bottom: 1px solid rgba(69, 157, 216, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 320px;
+    grid-column: 1 / -1;
+}
+
+.chart-container canvas {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(69, 157, 216, 0.1);
 }
 
 .calculator-actions {
@@ -4083,6 +4116,8 @@ body.mobile-menu-open .mobile-menu-toggle span {
     display: flex;
     gap: 1rem;
     flex-wrap: wrap;
+    grid-column: 1 / -1;
+    justify-content: center;
 }
 
 .btn-primary,
@@ -4153,13 +4188,7 @@ body.mobile-menu-open .mobile-menu-toggle span {
 /* Mobile Calculator Styles */
 @media (max-width: 1024px) {
     .calculator-layout {
-        grid-template-columns: 1fr;
         gap: 2rem;
-    }
-    
-    .calculator-results {
-        position: static;
-        max-height: none;
     }
 }
 
@@ -4170,7 +4199,7 @@ body.mobile-menu-open .mobile-menu-toggle span {
     
     .calculator-layout {
         padding: 0 1rem;
-        gap: 1.5rem;
+        gap: 2rem;
     }
     
     .input-section-title {
@@ -4188,12 +4217,34 @@ body.mobile-menu-open .mobile-menu-toggle span {
         font-size: 1.2rem;
     }
     
+    /* Revert to single column layout on mobile */
+    .calculator-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        max-width: 100%;
+    }
+    
     .results-summary,
     .results-breakdown,
     .projection-table,
     .chart-container,
     .calculator-actions {
         padding: 1.5rem;
+    }
+    
+    .projection-table th,
+    .projection-table td {
+        padding: 0.4rem 0.2rem;
+        font-size: 0.75rem;
+    }
+    
+    .projection-table table {
+        font-size: 0.75rem;
+    }
+    
+    .chart-container {
+        min-height: 280px;
+        padding: 1rem;
     }
     
     .calculator-actions {
