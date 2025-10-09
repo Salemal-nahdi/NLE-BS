@@ -110,12 +110,12 @@
                         <div class="input-card">
                             <div class="form-group">
                                 <label for="buildingCost">Building Construction Cost</label>
-                                <input type="number" id="buildingCost" placeholder="450000" min="0" step="1000">
+                                <input type="number" id="buildingCost" placeholder="e.g. 450000" min="0" step="1000">
                                 <small class="input-help">Enter the cost of the building structure (excluding land). 2.5% annual depreciation applied.</small>
                             </div>
                             <div class="form-group">
                                 <label for="weeklyRent">Weekly Rental Income</label>
-                                <input type="number" id="weeklyRent" placeholder="650" min="0" step="10">
+                                <input type="number" id="weeklyRent" placeholder="e.g. 650" min="0" step="10">
                             </div>
                         </div>
                     </div>
@@ -125,15 +125,16 @@
                         <div class="input-card">
                             <div class="form-group">
                                 <label for="loanAmount">Loan Amount</label>
-                                <input type="number" id="loanAmount" placeholder="500000" min="0" step="1000">
+                                <input type="number" id="loanAmount" placeholder="e.g. 500000" min="0" step="1000">
                             </div>
                             <div class="form-group">
                                 <label for="interestRate">Interest Rate (%)</label>
-                                <input type="number" id="interestRate" placeholder="6.5" min="0" max="20" step="0.1">
+                                <input type="number" id="interestRate" placeholder="e.g. 6.5" min="0" max="20" step="0.1">
                             </div>
                             <div class="form-group">
                                 <label for="loanType">Loan Type</label>
                                 <select id="loanType">
+                                    <option value="" disabled selected>Select loan type</option>
                                     <option value="principal_interest">Principal & Interest</option>
                                     <option value="interest_only">Interest Only</option>
                                 </select>
@@ -142,10 +143,11 @@
                             <div class="form-group">
                                 <label for="loanTerm">Loan Term (Years)</label>
                                 <select id="loanTerm">
+                                    <option value="" disabled selected>Select loan term</option>
                                     <option value="15">15 Years</option>
                                     <option value="20">20 Years</option>
                                     <option value="25">25 Years</option>
-                                    <option value="30" selected>30 Years</option>
+                                    <option value="30">30 Years</option>
                                     <option value="35">35 Years</option>
                                     <option value="40">40 Years</option>
                                 </select>
@@ -159,27 +161,27 @@
                         <div class="input-card">
                             <div class="form-group">
                                 <label for="managementFees">Property Management (%)</label>
-                                <input type="number" id="managementFees" placeholder="8" min="0" max="20" step="0.5">
+                                <input type="number" id="managementFees" placeholder="e.g. 8" min="0" max="20" step="0.5">
                             </div>
                             <div class="form-group">
                                 <label for="councilRates">Council Rates</label>
-                                <input type="number" id="councilRates" placeholder="2500" min="0" step="100">
+                                <input type="number" id="councilRates" placeholder="e.g. 2500" min="0" step="100">
                             </div>
                             <div class="form-group">
                                 <label for="waterRates">Water Rates</label>
-                                <input type="number" id="waterRates" placeholder="800" min="0" step="50">
+                                <input type="number" id="waterRates" placeholder="e.g. 800" min="0" step="50">
                             </div>
                             <div class="form-group">
                                 <label for="insurance">Insurance</label>
-                                <input type="number" id="insurance" placeholder="1200" min="0" step="100">
+                                <input type="number" id="insurance" placeholder="e.g. 1200" min="0" step="100">
                             </div>
                             <div class="form-group">
                                 <label for="maintenance">Maintenance & Repairs</label>
-                                <input type="number" id="maintenance" placeholder="3000" min="0" step="500">
+                                <input type="number" id="maintenance" placeholder="e.g. 3000" min="0" step="500">
                             </div>
                             <div class="form-group">
                                 <label for="otherExpenses">Other Expenses</label>
-                                <input type="number" id="otherExpenses" placeholder="0" min="0" step="100">
+                                <input type="number" id="otherExpenses" placeholder="e.g. 0" min="0" step="100">
                             </div>
                         </div>
                     </div>
@@ -189,7 +191,7 @@
                         <div class="input-card">
                             <div class="form-group">
                                 <label for="annualIncome">Annual Taxable Income</label>
-                                <input type="number" id="annualIncome" placeholder="120000" min="0" step="1000">
+                                <input type="number" id="annualIncome" placeholder="e.g. 120000" min="0" step="1000">
                                 <small class="input-help">Tax calculations based on 2024-25/2025-26 rates including Medicare levy (2%)</small>
                             </div>
                         </div>
@@ -201,16 +203,17 @@
                             <div class="form-group">
                                 <label for="projectionYears">Calculate for how many years?</label>
                                 <select id="projectionYears">
+                                    <option value="" disabled selected>Select years</option>
                                     <option value="1">1 Year</option>
                                     <option value="2">2 Years</option>
                                     <option value="3">3 Years</option>
                                     <option value="4">4 Years</option>
-                                    <option value="5" selected>5 Years</option>
+                                    <option value="5">5 Years</option>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="rentIncrease">Annual Rent Increase (% per year)</label>
-                                <input type="number" id="rentIncrease" placeholder="3" min="0" max="10" step="0.5">
+                                <input type="number" id="rentIncrease" placeholder="e.g. 3" min="0" max="10" step="0.5">
                                 <small class="input-help">Expected yearly increase in rental income</small>
                             </div>
                         </div>

@@ -9,30 +9,11 @@ class NegativeGearingCalculator {
     }
 
     initializeInputs() {
-        // Set default values
-        const defaults = {
-            buildingCost: 450000,
-            weeklyRent: 650,
-            loanAmount: 500000,
-            interestRate: 6.5,
-            managementFees: 8,
-            councilRates: 2500,
-            waterRates: 800,
-            insurance: 1200,
-            maintenance: 3000,
-            otherExpenses: 0,
-            annualIncome: 120000,
-            projectionYears: 5,
-            rentIncrease: 3
-        };
-
-        // Set default values for inputs
-        Object.keys(defaults).forEach(key => {
-            const input = document.getElementById(key);
-            if (input && !input.value) {
-                input.value = defaults[key];
-            }
-        });
+        // Hide results section initially
+        const resultsSection = document.querySelector('.main-analysis-card');
+        if (resultsSection) {
+            resultsSection.style.display = 'none';
+        }
     }
 
     setupEventListeners() {
@@ -119,6 +100,33 @@ class NegativeGearingCalculator {
 
     calculate() {
         const inputs = this.getInputValues();
+        
+        // Check if required fields are filled
+        const requiredFields = [
+            inputs.buildingCost,
+            inputs.weeklyRent,
+            inputs.loanAmount,
+            inputs.interestRate,
+            inputs.loanType,
+            inputs.loanTerm,
+            inputs.annualIncome,
+            inputs.projectionYears
+        ];
+        
+        const resultsSection = document.querySelector('.main-analysis-card');
+        
+        // If any required field is empty or zero, hide results and return
+        if (requiredFields.some(field => !field || field === '' || field === 0)) {
+            if (resultsSection) {
+                resultsSection.style.display = 'none';
+            }
+            return;
+        }
+        
+        // Show results section since all required fields are filled
+        if (resultsSection) {
+            resultsSection.style.display = 'block';
+        }
         
         // Calculate annual rental income
         const annualRentalIncome = inputs.weeklyRent * 52;
