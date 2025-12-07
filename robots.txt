@@ -1,0 +1,13 @@
+# robots.txt for nlesa.com.au
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://nlesa.com.au/sitemap-index.xml
+Sitemap: https://nlesa.com.au/sitemap.xml
+Sitemap: https://nlesa.com.au/sitemap-suburbs.xml
+
+# Disallow admin or private areas if any exist in the future
+# User-agent: *
+# Disallow: /admin/
