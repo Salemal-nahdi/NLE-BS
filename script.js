@@ -3,192 +3,212 @@ let particleCanvas, particleCtx;
 
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Delay heavy animations on mobile to prevent jitter
-    const isMobile = window.innerWidth <= 768;
-    
-    if (isMobile) {
-        // Delay particle animation to prevent initial jitter
-        setTimeout(() => {
-            initParticleAnimation();
-        }, 1000);
-        // Delay typewriter effect on mobile
-        setTimeout(() => {
-            initTypewriterEffect();
-        }, 1500);
-    } else {
-        initParticleAnimation();
-        initTypewriterEffect();
-    }
-    
     initScrollEffects();
     initMobileMenu();
     initFormHandling();
     initSmoothScrolling();
+    initServiceCategories();
+    initHeaderDropdowns();
 });
 
-// Particle Animation System
-function initParticleAnimation() {
-    particleCanvas = document.getElementById('particle-canvas');
-    if (!particleCanvas) return;
+// Service Categories Expand/Collapse
+function initServiceCategories() {
+    const categories = document.querySelectorAll('.service-category');
     
-    particleCtx = particleCanvas.getContext('2d');
-    
-    // Set canvas size
-    function resizeCanvas() {
-        particleCanvas.width = window.innerWidth;
-        particleCanvas.height = window.innerHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Particle class
-    class Particle {
-        constructor() {
-            this.x = Math.random() * particleCanvas.width;
-            this.y = Math.random() * particleCanvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 1;
-            this.opacity = Math.random() * 0.5 + 0.5;
-        }
+    categories.forEach(category => {
+        const header = category.querySelector('.category-header');
+        const toggle = category.querySelector('.category-toggle');
         
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            
-            // Wrap around edges
-            if (this.x < 0) this.x = particleCanvas.width;
-            if (this.x > particleCanvas.width) this.x = 0;
-            if (this.y < 0) this.y = particleCanvas.height;
-            if (this.y > particleCanvas.height) this.y = 0;
-        }
-        
-        draw() {
-            particleCtx.beginPath();
-            particleCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            particleCtx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-            particleCtx.fill();
-        }
-    }
-    
-    // Create particles (reduce count on mobile)
-    const particles = [];
-    const isMobile = window.innerWidth <= 768;
-    const particleCount = isMobile ? 30 : 100;
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-    
-    // Animation loop
-    function animate() {
-        particleCtx.clearRect(0, 0, particleCanvas.width, particleCanvas.height);
-        
-        // Update and draw particles
-        particles.forEach(particle => {
-            particle.update();
-            particle.draw();
-        });
-        
-        // Draw connections
-        particles.forEach((p1, i) => {
-            particles.slice(i + 1).forEach(p2 => {
-                const distance = Math.sqrt(
-                    Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2)
-                );
-                
-                if (distance < 100) {
-                    particleCtx.beginPath();
-                    particleCtx.moveTo(p1.x, p1.y);
-                    particleCtx.lineTo(p2.x, p2.y);
-                    particleCtx.strokeStyle = `rgba(69, 157, 216, ${0.3 * (1 - distance / 100)})`;
-                    particleCtx.stroke();
-                }
+        if (header && toggle) {
+            header.addEventListener('click', () => {
+                category.classList.toggle('active');
+                const isExpanded = category.classList.contains('active');
+                toggle.setAttribute('aria-expanded', isExpanded);
             });
-        });
-        
-        requestAnimationFrame(animate);
-    }
-    
-    animate();
+        }
+    });
 }
 
-
+// Header Dropdown Menus with Smooth Hover Behavior
+function initHeaderDropdowns() {
+    // Handle nav-dropdown-secondary (main header)
+    const dropdownsSecondary = document.querySelectorAll('.nav-dropdown-secondary');
+    let hideTimeoutsSecondary = new Map();
+    
+    // Function to close all secondary dropdowns except the specified one
+    function closeAllSecondaryDropdowns(exceptDropdown = null) {
+        dropdownsSecondary.forEach(dd => {
+            if (dd === exceptDropdown) return;
+            const menu = dd.querySelector('.dropdown-menu-secondary');
+            if (menu) {
+                const timeout = hideTimeoutsSecondary.get(dd);
+                if (timeout) clearTimeout(timeout);
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+            }
+        });
+    }
+    
+    dropdownsSecondary.forEach((dropdown, index) => {
+        const menu = dropdown.querySelector('.dropdown-menu-secondary');
+        if (!menu) return;
+        
+        // Set unique z-index for each dropdown (higher for later ones)
+        menu.style.zIndex = (10000 + index).toString();
+        
+        // Show dropdown on hover
+        dropdown.addEventListener('mouseenter', () => {
+            // Close all other dropdowns first
+            closeAllSecondaryDropdowns(dropdown);
+            
+            // Clear any existing timeout for this dropdown
+            const existingTimeout = hideTimeoutsSecondary.get(dropdown);
+            if (existingTimeout) clearTimeout(existingTimeout);
+            
+            // Show this dropdown
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            menu.style.transform = 'translateY(0)';
+            menu.style.pointerEvents = 'auto';
+        });
+        
+        // Hide dropdown with delay when leaving
+        dropdown.addEventListener('mouseleave', () => {
+            const timeout = setTimeout(() => {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+                hideTimeoutsSecondary.delete(dropdown);
+            }, 150); // 150ms delay before hiding
+            hideTimeoutsSecondary.set(dropdown, timeout);
+        });
+        
+        // Keep dropdown open when hovering over menu itself
+        menu.addEventListener('mouseenter', () => {
+            // Close all other dropdowns
+            closeAllSecondaryDropdowns(dropdown);
+            
+            // Clear any existing timeout for this dropdown
+            const existingTimeout = hideTimeoutsSecondary.get(dropdown);
+            if (existingTimeout) clearTimeout(existingTimeout);
+            
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            menu.style.transform = 'translateY(0)';
+            menu.style.pointerEvents = 'auto';
+        });
+        
+        menu.addEventListener('mouseleave', () => {
+            const timeout = setTimeout(() => {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+                hideTimeoutsSecondary.delete(dropdown);
+            }, 150);
+            hideTimeoutsSecondary.set(dropdown, timeout);
+        });
+    });
+    
+    // Handle nav-dropdown (service pages)
+    const dropdowns = document.querySelectorAll('.nav-dropdown');
+    let hideTimeouts = new Map();
+    
+    // Function to close all dropdowns except the specified one
+    function closeAllDropdowns(exceptDropdown = null) {
+        dropdowns.forEach(dd => {
+            if (dd === exceptDropdown) return;
+            const menu = dd.querySelector('.dropdown-menu');
+            if (menu) {
+                const timeout = hideTimeouts.get(dd);
+                if (timeout) clearTimeout(timeout);
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+            }
+        });
+    }
+    
+    dropdowns.forEach((dropdown, index) => {
+        const menu = dropdown.querySelector('.dropdown-menu');
+        if (!menu) return;
+        
+        // Set unique z-index for each dropdown (higher for later ones)
+        menu.style.zIndex = (10000 + index).toString();
+        
+        // Show dropdown on hover
+        dropdown.addEventListener('mouseenter', () => {
+            // Close all other dropdowns first
+            closeAllDropdowns(dropdown);
+            
+            // Clear any existing timeout for this dropdown
+            const existingTimeout = hideTimeouts.get(dropdown);
+            if (existingTimeout) clearTimeout(existingTimeout);
+            
+            // Show this dropdown
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            menu.style.transform = 'translateY(0)';
+            menu.style.pointerEvents = 'auto';
+        });
+        
+        // Hide dropdown with delay when leaving
+        dropdown.addEventListener('mouseleave', () => {
+            const timeout = setTimeout(() => {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+                hideTimeouts.delete(dropdown);
+            }, 150); // 150ms delay before hiding
+            hideTimeouts.set(dropdown, timeout);
+        });
+        
+        // Keep dropdown open when hovering over menu itself
+        menu.addEventListener('mouseenter', () => {
+            // Close all other dropdowns
+            closeAllDropdowns(dropdown);
+            
+            // Clear any existing timeout for this dropdown
+            const existingTimeout = hideTimeouts.get(dropdown);
+            if (existingTimeout) clearTimeout(existingTimeout);
+            
+            menu.style.opacity = '1';
+            menu.style.visibility = 'visible';
+            menu.style.transform = 'translateY(0)';
+            menu.style.pointerEvents = 'auto';
+        });
+        
+        menu.addEventListener('mouseleave', () => {
+            const timeout = setTimeout(() => {
+                menu.style.opacity = '0';
+                menu.style.visibility = 'hidden';
+                menu.style.transform = 'translateY(-10px)';
+                menu.style.pointerEvents = 'none';
+                hideTimeouts.delete(dropdown);
+            }, 150);
+            hideTimeouts.set(dropdown, timeout);
+        });
+    });
+}
 
 // Scroll Effects
 function initScrollEffects() {
     const header = document.querySelector('.main-header');
-    const logo = document.querySelector('.logo');
-    const navLinks = document.querySelectorAll('.nav-link');
-    const clientButton = document.querySelector('.client-button');
-    const mobileToggleSpans = document.querySelectorAll('.mobile-menu-toggle span');
+    const headerTop = document.querySelector('.header-top');
     
     window.addEventListener('scroll', () => {
         const scrollPosition = window.scrollY;
-        const maxScroll = 300; // Distance over which the transition happens
-        const scrollProgress = Math.min(scrollPosition / maxScroll, 1);
-        const isMobileMenuOpen = document.body.classList.contains('mobile-menu-open');
         
-        // Progressive header background opacity
-        if (scrollProgress > 0) {
-            header.style.background = `rgba(255, 255, 255, ${scrollProgress * 0.95})`;
-            header.style.backdropFilter = `blur(${scrollProgress * 10}px)`;
-            header.style.boxShadow = `0 2px 20px rgba(0, 0, 0, ${scrollProgress * 0.1})`;
+        // Add subtle shadow to header when scrolled
+        if (scrollPosition > 10) {
+            headerTop.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.08)';
         } else {
-            header.style.background = 'transparent';
-            header.style.backdropFilter = 'none';
-            header.style.boxShadow = 'none';
-        }
-        
-        // Clean white-to-blue logo transition (no brown in between)
-        // Skip logo color change if mobile menu is open
-        if (!isMobileMenuOpen) {
-        if (scrollProgress < 0.4) {
-            // White logo for first 40% of scroll
-            logo.style.filter = 'brightness(0) invert(1)';
-        } else {
-            // Original blue colors after 40% scroll
-            logo.style.filter = 'none';
-            }
-        }
-        
-                // Progressive text color transition
-        navLinks.forEach(link => {
-            const r = Math.round(255 * (1 - scrollProgress) + 3 * scrollProgress);
-            const g = Math.round(255 * (1 - scrollProgress) + 59 * scrollProgress);
-            const b = Math.round(255 * (1 - scrollProgress) + 135 * scrollProgress);
-            link.style.color = `rgb(${r}, ${g}, ${b})`;
-        });
-        
-        // Progressive button border and text color
-        if (clientButton) {
-            const r = Math.round(255 * (1 - scrollProgress) + 3 * scrollProgress);
-            const g = Math.round(255 * (1 - scrollProgress) + 59 * scrollProgress);
-            const b = Math.round(255 * (1 - scrollProgress) + 135 * scrollProgress);
-            clientButton.style.color = `rgb(${r}, ${g}, ${b})`;
-            clientButton.style.borderColor = `rgba(${r}, ${g}, ${b}, ${1 - scrollProgress * 0.3})`;
-        }
-        
-        // Progressive mobile menu color
-        // Skip mobile toggle color change if mobile menu is open
-        if (!isMobileMenuOpen) {
-        mobileToggleSpans.forEach(span => {
-            const r = Math.round(255 * (1 - scrollProgress) + 3 * scrollProgress);
-            const g = Math.round(255 * (1 - scrollProgress) + 59 * scrollProgress);
-            const b = Math.round(255 * (1 - scrollProgress) + 135 * scrollProgress);
-            span.style.background = `rgb(${r}, ${g}, ${b})`;
-        });
-        }
-        
-        // Parallax effect for hero elements
-        const heroContent = document.querySelector('.hero-content');
-        const hero3D = document.querySelector('.hero-3d-dashboard');
-        
-        if (heroContent) {
-            heroContent.style.transform = `translateY(${scrollPosition * 0.5}px)`;
-        }
-        
-        if (hero3D) {
-            hero3D.style.transform = `translateY(-50%) translateX(${scrollPosition * 0.3}px)`;
+            headerTop.style.boxShadow = 'none';
         }
     });
 }
@@ -198,38 +218,23 @@ function initMobileMenu() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileOverlay = document.querySelector('.mobile-menu-overlay');
     const mobileLinks = document.querySelectorAll('.mobile-nav-link:not(.services-toggle):not(.calculators-toggle), .mobile-cta');
-    const logo = document.querySelector('.logo');
     const mobileToggleSpans = document.querySelectorAll('.mobile-menu-toggle span');
+    
+    if (!menuToggle) return;
     
     menuToggle.addEventListener('click', () => {
         const isActive = mobileOverlay.classList.toggle('active');
         menuToggle.classList.toggle('active');
         document.body.classList.toggle('mobile-menu-open', isActive);
         
-        // Force logo and hamburger menu to correct colors when menu opens
+        // Set hamburger menu color to dark navy when menu is open
         if (isActive) {
-            // Menu is opening - force colored logo and hamburger
-            logo.style.filter = 'none';
             mobileToggleSpans.forEach(span => {
                 span.style.background = 'var(--deep-navy)';
             });
         } else {
-            // Menu is closing - apply correct colors based on current scroll position
-            const scrollPosition = window.scrollY;
-            const maxScroll = 300;
-            const scrollProgress = Math.min(scrollPosition / maxScroll, 1);
-            
-            if (scrollProgress < 0.4) {
-                logo.style.filter = 'brightness(0) invert(1)';
-            } else {
-                logo.style.filter = 'none';
-            }
-            
             mobileToggleSpans.forEach(span => {
-                const r = Math.round(255 * (1 - scrollProgress) + 3 * scrollProgress);
-                const g = Math.round(255 * (1 - scrollProgress) + 59 * scrollProgress);
-                const b = Math.round(255 * (1 - scrollProgress) + 135 * scrollProgress);
-                span.style.background = `rgb(${r}, ${g}, ${b})`;
+                span.style.background = 'var(--deep-navy)';
             });
         }
     });
@@ -240,53 +245,19 @@ function initMobileMenu() {
             mobileOverlay.classList.remove('active');
             menuToggle.classList.remove('active');
             document.body.classList.remove('mobile-menu-open');
-            
-            // Menu is closing - apply correct colors based on current scroll position
-            const scrollPosition = window.scrollY;
-            const maxScroll = 300;
-            const scrollProgress = Math.min(scrollPosition / maxScroll, 1);
-            
-            if (scrollProgress < 0.4) {
-                logo.style.filter = 'brightness(0) invert(1)';
-            } else {
-                logo.style.filter = 'none';
-            }
-            
-            mobileToggleSpans.forEach(span => {
-                const r = Math.round(255 * (1 - scrollProgress) + 3 * scrollProgress);
-                const g = Math.round(255 * (1 - scrollProgress) + 59 * scrollProgress);
-                const b = Math.round(255 * (1 - scrollProgress) + 135 * scrollProgress);
-                span.style.background = `rgb(${r}, ${g}, ${b})`;
-            });
         });
     });
     
     // Close menu when clicking outside
-    mobileOverlay.addEventListener('click', (e) => {
-        if (e.target === mobileOverlay) {
-            mobileOverlay.classList.remove('active');
-            menuToggle.classList.remove('active');
-            document.body.classList.remove('mobile-menu-open');
-            
-            // Menu is closing - apply correct colors based on current scroll position
-            const scrollPosition = window.scrollY;
-            const maxScroll = 300;
-            const scrollProgress = Math.min(scrollPosition / maxScroll, 1);
-            
-            if (scrollProgress < 0.4) {
-                logo.style.filter = 'brightness(0) invert(1)';
-            } else {
-                logo.style.filter = 'none';
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) {
+                mobileOverlay.classList.remove('active');
+                menuToggle.classList.remove('active');
+                document.body.classList.remove('mobile-menu-open');
             }
-            
-            mobileToggleSpans.forEach(span => {
-                const r = Math.round(255 * (1 - scrollProgress) + 3 * scrollProgress);
-                const g = Math.round(255 * (1 - scrollProgress) + 59 * scrollProgress);
-                const b = Math.round(255 * (1 - scrollProgress) + 135 * scrollProgress);
-                span.style.background = `rgb(${r}, ${g}, ${b})`;
-            });
-        }
-    });
+        });
+    }
     
     // Calculator submenu toggle functionality
     const calculatorsToggle = document.querySelector('.calculators-toggle');
@@ -329,18 +300,168 @@ function initMobileMenu() {
 function initFormHandling() {
     const form = document.getElementById('consultation-form');
     
-    if (form) {
-        form.addEventListener('submit', (e) => {
-            // Add loading state but don't prevent default submission
-            const submitBtn = form.querySelector('.submit-btn');
-            if (submitBtn) {
-                submitBtn.classList.add('loading');
-                submitBtn.textContent = 'Sending...';
-                submitBtn.disabled = true;
+    if (!form) return;
+    
+    // Get all form inputs
+    const inputs = form.querySelectorAll('input, select, textarea');
+    
+    // Real-time validation on blur
+    inputs.forEach(input => {
+        // Validate on blur
+        input.addEventListener('blur', () => validateField(input));
+        
+        // Clear error state on input
+        input.addEventListener('input', () => {
+            if (input.parentElement.classList.contains('error')) {
+                clearFieldError(input);
             }
-            
-            // Let Netlify handle the form submission naturally
         });
+    });
+    
+    // Form submission validation
+    form.addEventListener('submit', (e) => {
+        let isValid = true;
+        
+        // Validate all fields
+        inputs.forEach(input => {
+            if (!validateField(input)) {
+                isValid = false;
+            }
+        });
+        
+        if (!isValid) {
+            e.preventDefault();
+            // Focus on first error field
+            const firstError = form.querySelector('.form-group.error input, .form-group.error select, .form-group.error textarea');
+            if (firstError) {
+                firstError.focus();
+                firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return false;
+        }
+        
+        // Add loading state
+        const submitBtn = form.querySelector('.submit-btn');
+        if (submitBtn) {
+            submitBtn.classList.add('loading');
+            const btnText = submitBtn.querySelector('span');
+            if (btnText) {
+                btnText.textContent = 'Sending...';
+            }
+            submitBtn.disabled = true;
+        }
+        
+        // Let Netlify handle the form submission naturally
+    });
+    
+    // Validation functions
+    function validateField(field) {
+        const formGroup = field.closest('.form-group');
+        if (!formGroup) return true;
+        
+        // Remove existing messages
+        clearFieldError(field);
+        clearFieldSuccess(field);
+        
+        // Remove error/success classes
+        formGroup.classList.remove('error', 'success');
+        
+        // Check if field is required
+        const isRequired = field.hasAttribute('required');
+        const value = field.value.trim();
+        
+        // Required field validation
+        if (isRequired && !value) {
+            showFieldError(field, 'This field is required');
+            return false;
+        }
+        
+        // Email validation
+        if (field.type === 'email' && value) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(value)) {
+                showFieldError(field, 'Please enter a valid email address');
+                return false;
+            }
+        }
+        
+        // Phone validation (basic)
+        if (field.type === 'tel' && value) {
+            const phoneRegex = /^[\d\s()+-]+$/;
+            if (!phoneRegex.test(value) || value.replace(/\D/g, '').length < 8) {
+                showFieldError(field, 'Please enter a valid phone number');
+                return false;
+            }
+        }
+        
+        // If field is valid and has value, show success
+        if (value && (field.type === 'email' || field.type === 'tel')) {
+            showFieldSuccess(field);
+        }
+        
+        return true;
+    }
+    
+    function showFieldError(field, message) {
+        const formGroup = field.closest('.form-group');
+        if (!formGroup) return;
+        
+        formGroup.classList.add('error');
+        formGroup.classList.remove('success');
+        
+        // Remove existing error message
+        const existingError = formGroup.querySelector('.error-message');
+        if (existingError) {
+            existingError.remove();
+        }
+        
+        // Create error message
+        const errorMsg = document.createElement('span');
+        errorMsg.className = 'error-message';
+        errorMsg.textContent = message;
+        formGroup.appendChild(errorMsg);
+    }
+    
+    function showFieldSuccess(field) {
+        const formGroup = field.closest('.form-group');
+        if (!formGroup) return;
+        
+        formGroup.classList.add('success');
+        formGroup.classList.remove('error');
+        
+        // Remove existing success message
+        const existingSuccess = formGroup.querySelector('.success-message');
+        if (existingSuccess) {
+            existingSuccess.remove();
+        }
+        
+        // Create success message
+        const successMsg = document.createElement('span');
+        successMsg.className = 'success-message';
+        successMsg.textContent = 'Looks good!';
+        formGroup.appendChild(successMsg);
+    }
+    
+    function clearFieldError(field) {
+        const formGroup = field.closest('.form-group');
+        if (!formGroup) return;
+        
+        formGroup.classList.remove('error');
+        const errorMsg = formGroup.querySelector('.error-message');
+        if (errorMsg) {
+            errorMsg.remove();
+        }
+    }
+    
+    function clearFieldSuccess(field) {
+        const formGroup = field.closest('.form-group');
+        if (!formGroup) return;
+        
+        formGroup.classList.remove('success');
+        const successMsg = formGroup.querySelector('.success-message');
+        if (successMsg) {
+            successMsg.remove();
+        }
     }
 }
 
@@ -369,45 +490,18 @@ function initSmoothScrolling() {
     });
 }
 
-// Typewriter Effect
-function initTypewriterEffect() {
-    const title = document.querySelector('.hero-title');
-    if (!title) return;
-    
-    const originalText = title.innerHTML;
-    title.innerHTML = '';
-    
-    let index = 0;
-    let currentText = '';
-    
-    function typeWriter() {
-        if (index < originalText.length) {
-            // Handle HTML tags properly to avoid visual glitches
-            if (originalText.charAt(index) === '<') {
-                // Find the end of the HTML tag
-                let tagEnd = originalText.indexOf('>', index);
-                if (tagEnd !== -1) {
-                    // Add the entire tag at once
-                    currentText += originalText.substring(index, tagEnd + 1);
-                    index = tagEnd + 1;
-                } else {
-                    currentText += originalText.charAt(index);
-                    index++;
-                }
-            } else {
-                currentText += originalText.charAt(index);
-                index++;
-            }
-            title.innerHTML = currentText;
-            setTimeout(typeWriter, 25);
-        }
+// Scroll indicator click handler
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollIndicator = document.querySelector('.hero-scroll-indicator');
+    if (scrollIndicator) {
+        scrollIndicator.addEventListener('click', () => {
+            window.scrollTo({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        });
     }
-    
-    // Start typewriter with longer delay on mobile to prevent jitter
-    const isMobile = window.innerWidth <= 768;
-    const delay = isMobile ? 800 : 200;
-    setTimeout(typeWriter, delay);
-}
+});
 
 // Service Hexagon Interactions
 document.querySelectorAll('.service-hexagon').forEach(hex => {

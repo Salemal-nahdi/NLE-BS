@@ -13,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software & Automation Consulting | NLE Business Services</title>
     <meta name="description" content="Transform your business with expert software and automation consulting. Specialising in Xero migrations, process automation, and workflow optimisation to boost efficiency.">
+    <link rel="stylesheet" href="tailwind.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/png" href="logo-colour.png">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -21,209 +22,96 @@
 <body>
     <!-- Header Navigation -->
     <header class="main-header">
-        <nav class="nav-container">
-            <div class="logo-wrapper">
-                <a href="index.html">
-                    <img src="logo-colour.png" alt="NLE Tax & Accounting" class="logo">
-                </a>
+        <!-- Top Navigation Bar (White) -->
+        <div class="header-top">
+            <div class="nav-container">
+                <div class="logo-wrapper">
+                    <a href="index.html">
+                        <img src="logo-with-tagline.png" alt="NLE Business Services - Proactive accountants. Better outcomes." class="logo">
+                    </a>
+                </div>
+                <div class="nav-menu-top">
+                    <a href="index.html#about" class="nav-link-top">About</a>
+                    <a href="locations.html" class="nav-link-top">Locations</a>
+                    <a href="careers.html" class="nav-link-top">Careers</a>
+                </div>
+                <div class="header-cta-inline">
+                    <a class="cta-call" href="tel:+61870838322">Call Now</a>
+                </div>
+                <button class="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <div class="nav-menu">
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Services</a>
-                    <div class="dropdown-menu">
-                        <a href="tax-preparation.html" class="dropdown-item">Tax Preparation & Filing</a>
-                        <a href="management-accounts.html" class="dropdown-item active">Software & Automation Consulting</a>
-                        <a href="bookkeeping-payroll.html" class="dropdown-item">Bookkeeping & Payroll</a>
-                        <a href="tax-planning.html" class="dropdown-item">Tax Planning & Strategy</a>
-                        <a href="deceased-estates.html" class="dropdown-item">Deceased Estates</a>
-                        <a href="virtual-cfo.html" class="dropdown-item">Virtual CFO</a>
+        </div>
+        
+        <!-- Secondary Navigation Bar (Dark Teal) -->
+        <div class="header-secondary-wrapper">
+            <div class="header-secondary">
+                <div class="nav-container-secondary">
+                    <div class="nav-menu-secondary">
+                        <div class="nav-dropdown-secondary">
+                            <a href="index.html#services" class="nav-link-secondary dropdown-toggle">
+                                Advisory
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-chevron">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu-secondary">
+                                <a href="index.html#business-services" class="dropdown-item-secondary">Business strategy, consulting and advice</a>
+                                <a href="virtual-cfo.html" class="dropdown-item-secondary">Virtual CFO</a>
+                            </div>
+                        </div>
+                        <div class="nav-dropdown-secondary">
+                            <a href="accountants-adelaide.html" class="nav-link-secondary dropdown-toggle">
+                                Services
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="dropdown-chevron">
+                                    <path d="m6 9 6 6 6-6"/>
+                                </svg>
+                            </a>
+                            <div class="dropdown-menu-secondary">
+                                <a href="tax-accountant-adelaide.html" class="dropdown-item-secondary">Tax Returns</a>
+                                <a href="bookkeeping-adelaide.html" class="dropdown-item-secondary">Bookkeeping & BAS</a>
+                                <a href="xero-accountant-adelaide.html" class="dropdown-item-secondary">Xero Accounting</a>
+                                <a href="business-accountants-adelaide.html" class="dropdown-item-secondary">Business Accounting</a>
+                            </div>
+                        </div>
+                        <a href="locations.html" class="nav-link-secondary">Locations</a>
                     </div>
                 </div>
-                <div class="nav-dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">Calculators</a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-item coming-soon">
-                            <div class="dropdown-item-content">
-                                <div class="dropdown-item-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <rect x="4" y="2" width="16" height="20" rx="2"/>
-                                        <rect x="6" y="4" width="12" height="3" rx="1"/>
-                                        <path d="M8 10h.01"/>
-                                        <path d="M12 10h.01"/>
-                                        <path d="M16 10h.01"/>
-                                        <path d="M8 13h.01"/>
-                                        <path d="M12 13h.01"/>
-                                        <path d="M16 13h.01"/>
-                                        <path d="M8 16h.01"/>
-                                        <path d="M12 16h.01"/>
-                                        <path d="M16 16h.01"/>
-                                        <path d="M8 19h8"/>
-                                    </svg>
-                                </div>
-                                <div class="dropdown-item-text">
-                                    <span class="dropdown-item-title">Reverse Payroll Calculator</span>
-                                    <span class="coming-soon-badge">Coming Soon</span>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="dropdown-item coming-soon">
-                            <div class="dropdown-item-content">
-                                <div class="dropdown-item-icon">
-                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M3 3v18h18"/>
-                                        <path d="M7 16l3-3 3 3 5-5"/>
-                                        <path d="M14 8h5v5"/>
-                                    </svg>
-                                </div>
-                                <div class="dropdown-item-text">
-                                    <span class="dropdown-item-title">Negative Gearing Calculator</span>
-                                    <span class="coming-soon-badge">Coming Soon</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                                    <a href="index.html#about" class="nav-link">About</a>
-                    <a href="index.html#contact" class="cta-button">Contact Us</a>
             </div>
-            <button class="mobile-menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+            <div class="header-cta-section">
+                <a href="index.html#contact" class="get-in-touch-button">Get in touch</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu-overlay">
-        <div class="mobile-menu-content">
-            <nav class="mobile-nav">
-                <a href="#" class="mobile-nav-link services-toggle">
-                    <span class="nav-link-text">Services</span>
-                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 18 6-6-6-6"/>
-                    </svg>
-                </a>
-                <div class="mobile-services-submenu">
-                    <a href="tax-preparation.html" class="mobile-nav-sublink">
-                        <span>Tax Preparation & Filing</span>
-                    </a>
-                    <a href="management-accounts.html" class="mobile-nav-sublink active">
-                        <span>Software & Automation Consulting</span>
-                    </a>
-                    <a href="bookkeeping-payroll.html" class="mobile-nav-sublink">
-                        <span>Bookkeeping & Payroll</span>
-                    </a>
-                    <a href="tax-planning.html" class="mobile-nav-sublink">
-                        <span>Tax Planning & Strategy</span>
-                    </a>
-                    <a href="deceased-estates.html" class="mobile-nav-sublink">
-                        <span>Deceased Estates</span>
-                    </a>
-                    <a href="virtual-cfo.html" class="mobile-nav-sublink">
-                        <span>Virtual CFO</span>
-                    </a>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <p class="eyebrow">Software & Automation Consulting</p>
+                    <h1 class="hero-title">Transform your business with software and automation</h1>
+                    <p class="hero-subtitle">Transform your business operations with cutting-edge software solutions and intelligent automation. From seamless Xero migrations to comprehensive workflow optimisation, we'll help you harness technology to boost efficiency and drive growth.</p>
+                    <div class="hero-ctas">
+                        <a class="primary-cta" href="tel:+61870838322">Call now</a>
+                        <a class="secondary-cta" href="index.html#contact">Book a free consult</a>
+                    </div>
+                    <ul class="hero-bullets">
+                        <li>Xero migrations · Workflow optimisation</li>
+                        <li>Software solutions · Intelligent automation</li>
+                        <li>Boost efficiency · Drive growth</li>
+                    </ul>
                 </div>
-                <a href="index.html#about" class="mobile-nav-link">
-                    <span class="nav-link-text">About</span>
-                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 18 6-6-6-6"/>
-                    </svg>
-                </a>
-                <a href="#" class="mobile-nav-link calculators-toggle">
-                    <span class="nav-link-text">Calculators</span>
-                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 18 6-6-6-6"/>
-                    </svg>
-                </a>
-                <div class="mobile-calculators-submenu">
-                    <a href="#" class="mobile-nav-sublink coming-soon">
-                        <div class="mobile-nav-sublink-content">
-                            <div class="mobile-nav-sublink-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <rect x="4" y="2" width="16" height="20" rx="2"/>
-                                    <rect x="6" y="4" width="12" height="3" rx="1"/>
-                                    <path d="M8 10h.01"/>
-                                    <path d="M12 10h.01"/>
-                                    <path d="M16 10h.01"/>
-                                    <path d="M8 13h.01"/>
-                                    <path d="M12 13h.01"/>
-                                    <path d="M16 13h.01"/>
-                                    <path d="M8 16h.01"/>
-                                    <path d="M12 16h.01"/>
-                                    <path d="M16 16h.01"/>
-                                    <path d="M8 19h8"/>
-                                </svg>
-                            </div>
-                            <div class="mobile-nav-sublink-text">
-                                <span class="mobile-nav-sublink-title">Reverse Payroll Calculator</span>
-                                <span class="coming-soon-badge">Coming Soon</span>
-                            </div>
+                <div class="hero-image-container">
+                    <div class="hero-curved-shape">
+                        <div class="hero-image-wrapper">
+                            <img class="hero-image" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&auto=format&fit=crop" alt="Software and automation consulting">
                         </div>
-                    </a>
-                    <a href="#" class="mobile-nav-sublink coming-soon">
-                        <div class="mobile-nav-sublink-content">
-                            <div class="mobile-nav-sublink-icon">
-                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3v18h18"/>
-                                    <path d="M7 16l3-3 3 3 5-5"/>
-                                    <path d="M14 8h5v5"/>
-                                </svg>
-                            </div>
-                            <div class="mobile-nav-sublink-text">
-                                <span class="mobile-nav-sublink-title">Negative Gearing Calculator</span>
-                                <span class="coming-soon-badge">Coming Soon</span>
-                            </div>
-                        </div>
-                    </a>
+                    </div>
                 </div>
-                <a href="index.html#contact" class="mobile-nav-link">
-                    <span class="nav-link-text">Contact</span>
-                    <svg class="nav-link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m9 18 6-6-6-6"/>
-                    </svg>
-                </a>
-            </nav>
-            <div class="mobile-menu-footer">
-                <a href="index.html#contact" class="mobile-cta">Get Started Today</a>
-                <div class="mobile-menu-contact">
-                    <a href="tel:61451072412" class="mobile-contact-link">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        <span>(08) 7083 8322</span>
-                    </a>
-                    <a href="mailto:info@nlesa.com.au" class="mobile-contact-link">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                        <span>info@nlesa.com.au</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Service Hero Section -->
-    <section class="service-hero-section">
-        <div class="service-hero-background">
-            <div class="geometric-patterns"></div>
-        </div>
-        <div class="service-hero-content">
-            <div class="service-hero-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <rect x="2" y="3" width="20" height="14" rx="2"/>
-                    <line x1="8" y1="21" x2="16" y2="21"/>
-                    <line x1="12" y1="17" x2="12" y2="21"/>
-                    <path d="M7 10h5l-2 3h4l-2 3"/>
-                </svg>
-            </div>
-            <h1 class="service-hero-title">Software & Automation Consulting</h1>
-            <p class="service-hero-subtitle">Transform your business operations with cutting-edge software solutions and intelligent automation. From seamless Xero migrations to comprehensive workflow optimisation, we'll help you harness technology to boost efficiency and drive growth.</p>
-            <div class="service-hero-cta">
-                <a href="index.html#contact" class="primary-cta">Get Started</a>
-                <a href="#service-details" class="secondary-cta">Learn More</a>
             </div>
         </div>
     </section>
@@ -395,6 +283,151 @@
                     <h3>Tax Planning & Strategy</h3>
                     <p>Optimise your tax position with strategic planning and technology-enabled compliance.</p>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-content">
+                    <div class="contact-header">
+                        <h2 class="section-title">Get in touch</h2>
+                        <p class="section-subtitle">Have a question or ready to get started? We're here to help.</p>
+                    </div>
+                    
+                    <div class="contact-cards" id="contact-form">
+                        <div class="contact-card contact-form-card">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                        <path d="M8 9h8"/>
+                                        <path d="M8 13h6"/>
+                                    </svg>
+                                </div>
+                                <h3>Send Us a Message</h3>
+                                <p>Fill out the form below and we'll get back to you within 24 hours</p>
+                            </div>
+                            
+                            <form id="consultation-form" name="contact" method="POST" action="/success.html" netlify class="modern-form">
+                                <input type="hidden" name="form-name" value="contact" />
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Your full name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email Address</label>
+                                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="phone">Phone Number</label>
+                                        <input type="tel" id="phone" name="phone" placeholder="(08) XXXX XXXX">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="service">Service Interest</label>
+                                        <select id="service" name="service" required>
+                                            <option value="">Select a service</option>
+                                            <option value="tax-preparation">Tax Preparation & Filing</option>
+                                            <option value="management-accounts" selected>Software & Automation Consulting</option>
+                                            <option value="bookkeeping">Bookkeeping & Payroll</option>
+                                            <option value="tax-planning">Tax Planning & Strategy</option>
+                                            <option value="deceased-estates">Deceased Estates</option>
+                                            <option value="virtual-cfo">Virtual CFO</option>
+                                            <option value="consultation">General Consultation</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="message">Message</label>
+                                    <textarea id="message" name="message" placeholder="Tell us about your accounting needs and how we can help..." rows="4"></textarea>
+                                </div>
+                                <p class="form-microcopy">Fast response times — we'll get back to you within 1 business day.</p>
+                                <button type="submit" class="submit-btn">Schedule Free Consultation</button>
+                            </form>
+                        </div>
+                        
+                        <div class="contact-info-cards">
+                            <div class="contact-card info-card">
+                                <div class="info-header">
+                                    <div class="info-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Call Us Today</h4>
+                                </div>
+                                <p class="info-description">Speak directly with our expert team</p>
+                                <div class="info-details">
+                                    <a href="tel:+61870838322" class="info-link">(08) 7083 8322</a>
+                                    <span class="info-note">Free initial consultation</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-card info-card">
+                                <div class="info-header">
+                                    <div class="info-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                            <polyline points="22,6 12,13 2,6"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Email Us</h4>
+                                </div>
+                                <p class="info-description">Send us your questions anytime</p>
+                                <div class="info-details">
+                                    <a href="mailto:info@nlesa.com.au" class="info-link">info@nlesa.com.au</a>
+                                    <span class="info-note">Response within 24 hours</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-card info-card">
+                                <div class="info-header">
+                                    <div class="info-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                            <circle cx="12" cy="10" r="3"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Visit Our Office</h4>
+                                </div>
+                                <p class="info-description">Meet us in person for detailed consultation</p>
+                                <div class="info-details">
+                                    <span class="info-address">1A Tarton Road<br>Holden Hill, SA 5088</span>
+                                    <span class="info-note">By appointment only</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-card info-card hours-card">
+                                <div class="info-header">
+                                    <div class="info-icon">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <circle cx="12" cy="12" r="10"/>
+                                            <polyline points="12,6 12,12 16,14"/>
+                                        </svg>
+                                    </div>
+                                    <h4>Business Hours</h4>
+                                </div>
+                                <div class="hours-list">
+                                    <div class="hours-item">
+                                        <span class="day">Monday - Friday</span>
+                                        <span class="time">9:00 AM - 5:00 PM</span>
+                                    </div>
+                                    <div class="hours-item">
+                                        <span class="day">Saturday - Sunday</span>
+                                        <span class="time">Closed</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
